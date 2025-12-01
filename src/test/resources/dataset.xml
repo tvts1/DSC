@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+    <!-- ENDERECO -->
+    <TB_ENDERECO ID_ENDERECO="1"
+                 TXT_RUA="Rua A"
+                 TXT_CIDADE="Recife"
+                 TXT_ESTADO="PE"/>
+
+    <TB_ENDERECO ID_ENDERECO="2"
+                 TXT_RUA="Rua B"
+                 TXT_CIDADE="Olinda"
+                 TXT_ESTADO="PE"/>
+
+    <!-- PACIENTE -->
+    <TB_PACIENTE ID_PACIENTE="1"
+                 TXT_NOME="João Silva"
+                 TXT_CPF="12345678901"
+                 ENDERECO_ID="1"/>
+
+    <TB_PACIENTE ID_PACIENTE="2"
+                 TXT_NOME="Maria Souza"
+                 TXT_CPF="98765432100"
+                 ENDERECO_ID="2"/>
+
+    <!-- PRONTUARIO -->
+    <TB_PRONTUARIO ID_PRONTUARIO="1"
+                   TXT_DESCRICAO="Paciente com histórico positivo"
+                   PACIENTE_ID="1"/>
+
+    <TB_PRONTUARIO ID_PRONTUARIO="2"
+                   TXT_DESCRICAO="Paciente com alergia"
+                   PACIENTE_ID="2"/>
+
+    <!-- MEDICO -->
+    <TB_MEDICO ID_MEDICO="1"
+               TXT_NOME="Dr. Carlos"
+               TXT_CRM="CRM123"/>
+
+    <TB_MEDICO ID_MEDICO="2"
+               TXT_NOME="Dra. Ana"
+               TXT_CRM="CRM456"/>
+
+    <!-- EXAME -->
+    <TB_EXAME ID_EXAME="1"
+              TXT_NOME="Hemograma"/>
+
+    <TB_EXAME ID_EXAME="2"
+              TXT_NOME="Raio-X"/>
+
+    <!-- CONSULTA -->
+    <TB_CONSULTA ID_CONSULTA="1"
+                 DT_CONSULTA="2024-10-10"
+                 MEDICO_ID="1"
+                 PACIENTE_ID="1"/>
+
+    <TB_CONSULTA ID_CONSULTA="2"
+                 DT_CONSULTA="2024-10-12"
+                 MEDICO_ID="2"
+                 PACIENTE_ID="2"/>
+
+    <!-- CONSULTA_EXAME (tabela de junção do ManyToMany) -->
+    <TB_CONSULTA_EXAME CONSULTA_ID="1" EXAME_ID="1"/>
+    <TB_CONSULTA_EXAME CONSULTA_ID="1" EXAME_ID="2"/>
+    <TB_CONSULTA_EXAME CONSULTA_ID="2" EXAME_ID="1"/>
+
+    <!-- MEDICAMENTO -->
+    <TB_MEDICAMENTO ID_MEDICAMENTO="1"
+                    TXT_NOME="Dipirona"
+                    TXT_DOSE="500mg"
+                    PRONTUARIO_ID="1"/>
+
+    <TB_MEDICAMENTO ID_MEDICAMENTO="2"
+                    TXT_NOME="Ibuprofeno"
+                    TXT_DOSE="200mg"
+                    PRONTUARIO_ID="2"/>
+
+</dataset>
