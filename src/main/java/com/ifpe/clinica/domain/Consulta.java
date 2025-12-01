@@ -1,13 +1,99 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ifpe.clinica.domain;
 
-/**
- *
- * @author tassio
- */
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.Objects;
+
+@Entity
+@Table(name = "TB_CONSULTA")
 public class Consulta {
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_CONSULTA")
+    private Long id;
+
+    @Column(name = "DT_CONSULTA", nullable = false)
+    private LocalDate data;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MEDICO_ID")
+    private Medico medico;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PACIENTE_ID")
+    private Paciente paciente;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "TB_CONSULTA_EXAME",
+        joinColumns = @JoinColumn(name = "CONSULTA_ID"),
+        inverseJoinColumns = @JoinColumn(name = "EXAME_ID")
+    )
+    private List<Exame> exames = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public List getExames() {
+        return exames;
+    }
+
+    public void setExames(List exames) {
+        this.exames = exames;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Consulta other = (Consulta) obj;
+        return Objects.equals(this.id, other.id);
+    }
 }
