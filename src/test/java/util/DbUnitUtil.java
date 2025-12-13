@@ -13,7 +13,7 @@ public class DbUnitUtil {
 
     public static IDatabaseConnection getConnection() throws Exception {
         Connection conn = DriverManager.getConnection(
-            "jdbc:derby:memory:clinicaDB;create=true", "app", "app"
+            "jdbc:derby://localhost:1527/clinica", "clinica", "1234"
         );
         return new DatabaseConnection(conn);
     }

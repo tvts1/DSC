@@ -23,7 +23,7 @@ public class Prontuario {
     private Paciente paciente;
 
     @OneToMany(mappedBy = "prontuario", fetch = FetchType.LAZY,
-               cascade = CascadeType.ALL, orphanRemoval = true)
+               cascade = CascadeType.ALL, orphanRemoval = false)
     private List<Medicamento> medicamentos = new ArrayList<>();
 
     public Long getId() {

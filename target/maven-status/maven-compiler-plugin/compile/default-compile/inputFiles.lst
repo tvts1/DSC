@@ -1,2 +1,10 @@
-/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Medico.java
 /home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/Clinica.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Consulta.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Endereco.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Exame.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Medicamento.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Medico.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Paciente.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Pessoa.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/domain/Prontuario.java
+/home/tassio/NetBeansProjects/clinica/src/main/java/com/ifpe/clinica/enums/Especialidade.java

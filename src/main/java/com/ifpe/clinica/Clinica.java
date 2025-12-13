@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.ifpe.clinica;
 
-/**
- *
- * @author tassio
- */
+import com.ifpe.clinica.domain.Paciente;
 public class Clinica {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Paciente p = new Paciente();
+        p.setNome("Tassio");
+        
+        String b = p.getNome();
+        System.out.println(b);
     }
 }

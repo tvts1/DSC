@@ -1,0 +1,10 @@
+com/ifpe/clinica/domain/Exame.class
+com/ifpe/clinica/domain/Pessoa.class
+com/ifpe/clinica/enums/Especialidade.class
+com/ifpe/clinica/domain/Paciente.class
+com/ifpe/clinica/domain/Medicamento.class
+com/ifpe/clinica/domain/Endereco.class
+com/ifpe/clinica/Clinica.class
+com/ifpe/clinica/domain/Prontuario.class
+com/ifpe/clinica/domain/Medico.class
+com/ifpe/clinica/domain/Consulta.class

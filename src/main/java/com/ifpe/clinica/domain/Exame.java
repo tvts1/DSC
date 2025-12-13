@@ -20,6 +20,15 @@ public class Exame {
     @ManyToMany(mappedBy = "exames", fetch = FetchType.LAZY)
     private List<Consulta> consultas = new ArrayList<>();
 
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(
+        name = "TB_EXAME_ANEXOS",
+        joinColumns = @JoinColumn(name = "EXAME_ID", referencedColumnName = "ID_EXAME") 
+    )
+    @Column(name = "TXT_URL_ANEXO", length = 512, nullable = false)
+    private List<String> urlsAnexos = new ArrayList<>();
+    
+    
     public Long getId() {
         return id;
     }
@@ -42,6 +51,14 @@ public class Exame {
 
     public void setConsultas(List<Consulta> consultas) {
         this.consultas = consultas;
+    }
+
+    public List<String> getUrlsAnexos() {
+        return urlsAnexos;
+    }
+
+    public void setUrlsAnexos(List<String> urlsAnexos) {
+        this.urlsAnexos = urlsAnexos;
     }
 
     @Override

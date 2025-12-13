@@ -1,10 +1,9 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import java.util.Objects;
 
 @Entity
@@ -15,9 +14,9 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CONSULTA")
     private Long id;
-
+    
     @Column(name = "DT_CONSULTA", nullable = false)
-    private LocalDate data;
+    private LocalDateTime data;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEDICO_ID")
@@ -43,11 +42,11 @@ public class Consulta {
         this.id = id;
     }
 
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -67,11 +66,11 @@ public class Consulta {
         this.paciente = paciente;
     }
 
-    public List getExames() {
+    public List<Exame> getExames() {
         return exames;
     }
 
-    public void setExames(List exames) {
+    public void setExames(List<Exame> exames) {
         this.exames = exames;
     }
 

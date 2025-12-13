@@ -1,5 +1,6 @@
 package com.ifpe.clinica.domain;
 
+import com.ifpe.clinica.enums.Especialidade;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,38 +8,20 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "TB_MEDICO")
-public class Medico {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_MEDICO")
-    private Long id;
-
-    @Column(name = "TXT_NOME", nullable = false, length = 255)
-    private String nome;
-
+@DiscriminatorValue("MEDICO")
+@PrimaryKeyJoinColumn(name = "ID_PESSOA", referencedColumnName = "ID_PESSOA")
+public class Medico extends Pessoa {
+    
     @Column(name = "TXT_CRM", nullable = false, length = 20, unique = true)
     private String crm;
 
     @OneToMany(mappedBy = "medico", fetch = FetchType.LAZY,
                cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consulta> consultas = new ArrayList<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    
+    @Column(name = "TXT_ESPECIALIDADE")
+    @Enumerated(EnumType.STRING)
+    private Especialidade especialidade; 
 
     public String getCrm() {
         return crm;
@@ -55,7 +38,16 @@ public class Medico {
     public void setConsultas(List<Consulta> consultas) {
         this.consultas = consultas;
     }
+    
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
 
+    public void setEspecialidade(Especialidade especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

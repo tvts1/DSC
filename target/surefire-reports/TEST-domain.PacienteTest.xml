@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="domain.PacienteTest" time="0.816" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/tassio/NetBeansProjects/clinica/target/test-classes:/home/tassio/NetBeansProjects/clinica/target/classes:/home/tassio/.m2/repository/org/eclipse/persistence/eclipselink/4.0.4/eclipselink-4.0.4.jar:/home/tassio/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/tassio/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/tassio/.m2/repository/com/sun/xml/bind/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/home/tassio/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/tassio/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/tassio/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa/4.0.4/org.eclipse.persistence.jpa-4.0.4.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/9.7.0/org.eclipse.persistence.asm-9.7.0.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/4.0.4/org.eclipse.persistence.core-4.0.4.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/4.0.4/org.eclipse.persistence.jpa.jpql-4.0.4.jar:/home/tassio/.m2/repository/org/apache/derby/derbyclient/10.16.1.1/derbyclient-10.16.1.1.jar:/home/tassio/.m2/repository/org/apache/derby/derbyshared/10.16.1.1/derbyshared-10.16.1.1.jar:/home/tassio/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/tassio/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/tassio/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/tassio/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/tassio/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/tassio/.m2/repository/org/dbunit/dbunit/2.7.3/dbunit-2.7.3.jar:/home/tassio/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/tassio/.m2/repository/org/postgresql/postgresql/42.3.1/postgresql-42.3.1.jar:/home/tassio/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar:/home/tassio/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.3.0.0/ojdbc8-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/jdbc/ucp/19.3.0.0/ucp-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/oraclepki/19.3.0.0/oraclepki-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/osdt_cert/19.3.0.0/osdt_cert-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/osdt_core/19.3.0.0/osdt_core-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/ha/simplefan/19.3.0.0/simplefan-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/ha/ons/19.3.0.0/ons-19.3.0.0.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="America/Recife"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/tassio/NetBeansProjects/clinica/target/surefire/surefirebooter-20251213184044148_3.jar /home/tassio/NetBeansProjects/clinica/target/surefire 2025-12-13T18-40-44_050-jvmRun1 surefire-20251213184044148_1tmp surefire_0-20251213184044148_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/tassio/NetBeansProjects/clinica/target/test-classes:/home/tassio/NetBeansProjects/clinica/target/classes:/home/tassio/.m2/repository/org/eclipse/persistence/eclipselink/4.0.4/eclipselink-4.0.4.jar:/home/tassio/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/tassio/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/tassio/.m2/repository/com/sun/xml/bind/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/home/tassio/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/tassio/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/tassio/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa/4.0.4/org.eclipse.persistence.jpa-4.0.4.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/9.7.0/org.eclipse.persistence.asm-9.7.0.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/4.0.4/org.eclipse.persistence.core-4.0.4.jar:/home/tassio/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/4.0.4/org.eclipse.persistence.jpa.jpql-4.0.4.jar:/home/tassio/.m2/repository/org/apache/derby/derbyclient/10.16.1.1/derbyclient-10.16.1.1.jar:/home/tassio/.m2/repository/org/apache/derby/derbyshared/10.16.1.1/derbyshared-10.16.1.1.jar:/home/tassio/.m2/repository/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/tassio/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/tassio/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/tassio/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/tassio/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/tassio/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/tassio/.m2/repository/org/dbunit/dbunit/2.7.3/dbunit-2.7.3.jar:/home/tassio/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/tassio/.m2/repository/org/postgresql/postgresql/42.3.1/postgresql-42.3.1.jar:/home/tassio/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar:/home/tassio/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.3.0.0/ojdbc8-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/jdbc/ucp/19.3.0.0/ucp-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/oraclepki/19.3.0.0/oraclepki-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/osdt_cert/19.3.0.0/osdt_cert-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/security/osdt_core/19.3.0.0/osdt_core-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/ha/simplefan/19.3.0.0/simplefan-19.3.0.0.jar:/home/tassio/.m2/repository/com/oracle/database/ha/ons/19.3.0.0/ons-19.3.0.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/tassio"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/tassio/NetBeansProjects/clinica"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/tassio/NetBeansProjects/clinica/target/surefire/surefirebooter-20251213184044148_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="user.name" value="tassio"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.14.0-36-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="/usr/lib/apache-netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/home/tassio/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/tassio/NetBeansProjects/clinica"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="atualizarPacienteMerge" classname="domain.PacienteTest" time="0.019">
+    <system-out><![CDATA[[EL Fine]: moxy: 2025-12-13 18:40:47.55--Thread(Thread[#1,main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@38018b62
+[EL Fine]: server: 2025-12-13 18:40:47.553--Thread(Thread[#1,main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2025-12-13 18:40:47.565--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Exame] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.566--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target class (reference) class for the element collection mapping element [field urlsAnexos] is being defaulted to: class java.lang.String.
+[EL Config]: metadata: 2025-12-13 18:40:47.568--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the many to many mapping element [field consultas] is being defaulted to: class com.ifpe.clinica.domain.Consulta.
+[EL Config]: metadata: 2025-12-13 18:40:47.569--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Pessoa] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.57--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Consulta] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.571--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the many to one mapping element [field paciente] is being defaulted to: class com.ifpe.clinica.domain.Paciente.
+[EL Config]: metadata: 2025-12-13 18:40:47.572--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the many to one mapping element [field medico] is being defaulted to: class com.ifpe.clinica.domain.Medico.
+[EL Config]: metadata: 2025-12-13 18:40:47.572--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the many to many mapping element [field exames] is being defaulted to: class com.ifpe.clinica.domain.Exame.
+[EL Config]: metadata: 2025-12-13 18:40:47.572--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Prontuario] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.573--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to one mapping element [field paciente] is being defaulted to: class com.ifpe.clinica.domain.Paciente.
+[EL Config]: metadata: 2025-12-13 18:40:47.573--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to many mapping element [field medicamentos] is being defaulted to: class com.ifpe.clinica.domain.Medicamento.
+[EL Config]: metadata: 2025-12-13 18:40:47.573--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Medico] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.574--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to many mapping element [field consultas] is being defaulted to: class com.ifpe.clinica.domain.Consulta.
+[EL Config]: metadata: 2025-12-13 18:40:47.574--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Paciente] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.574--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to one mapping element [field prontuario] is being defaulted to: class com.ifpe.clinica.domain.Prontuario.
+[EL Config]: metadata: 2025-12-13 18:40:47.574--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to one mapping element [field endereco] is being defaulted to: class com.ifpe.clinica.domain.Endereco.
+[EL Config]: metadata: 2025-12-13 18:40:47.575--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to many mapping element [field consultas] is being defaulted to: class com.ifpe.clinica.domain.Consulta.
+[EL Config]: metadata: 2025-12-13 18:40:47.575--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Medicamento] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.575--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the many to one mapping element [field prontuario] is being defaulted to: class com.ifpe.clinica.domain.Prontuario.
+[EL Config]: metadata: 2025-12-13 18:40:47.576--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The access type for the persistent class [class com.ifpe.clinica.domain.Endereco] is set to [FIELD].
+[EL Config]: metadata: 2025-12-13 18:40:47.576--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target entity (reference) class for the one to one mapping element [field paciente] is being defaulted to: class com.ifpe.clinica.domain.Paciente.
+[EL Config]: metadata: 2025-12-13 18:40:47.576--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Exame] is being defaulted to: Exame.
+[EL Config]: metadata: 2025-12-13 18:40:47.578--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Pessoa] is being defaulted to: Pessoa.
+[EL Config]: metadata: 2025-12-13 18:40:47.578--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Consulta] is being defaulted to: Consulta.
+[EL Config]: metadata: 2025-12-13 18:40:47.58--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Prontuario] is being defaulted to: Prontuario.
+[EL Config]: metadata: 2025-12-13 18:40:47.58--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Medico] is being defaulted to: Medico.
+[EL Config]: metadata: 2025-12-13 18:40:47.581--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Paciente] is being defaulted to: Paciente.
+[EL Config]: metadata: 2025-12-13 18:40:47.581--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Medicamento] is being defaulted to: Medicamento.
+[EL Config]: metadata: 2025-12-13 18:40:47.582--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The alias name for the entity class [class com.ifpe.clinica.domain.Endereco] is being defaulted to: Endereco.
+[EL Config]: metadata: 2025-12-13 18:40:47.583--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The primary key column name for the mapping element [field paciente] is being defaulted to: ID_PESSOA.
+[EL Config]: metadata: 2025-12-13 18:40:47.584--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The primary key column name for the mapping element [field medico] is being defaulted to: ID_PESSOA.
+[EL Config]: metadata: 2025-12-13 18:40:47.584--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The source primary key column name for the many to many mapping [field exames] is being defaulted to: ID_CONSULTA.
+[EL Config]: metadata: 2025-12-13 18:40:47.584--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The target primary key column name for the many to many mapping [field exames] is being defaulted to: ID_EXAME.
+[EL Config]: metadata: 2025-12-13 18:40:47.584--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The primary key column name for the mapping element [field paciente] is being defaulted to: ID_PESSOA.
+[EL Config]: metadata: 2025-12-13 18:40:47.585--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The primary key column name for the mapping element [field endereco] is being defaulted to: ID_ENDERECO.
+[EL Config]: metadata: 2025-12-13 18:40:47.585--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--The primary key column name for the mapping element [field prontuario] is being defaulted to: ID_PRONTUARIO.
+[EL Info]: 2025-12-13 18:40:47.591--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--EclipseLink, version: Eclipse Persistence Services - 4.0.4.v202407190748-059428cdd2583c46f1f3e50d235854840a6fa9a7
+[EL Fine]: connection: 2025-12-13 18:40:47.591--ServerSession(216644009)--Connection(655059806)--Thread(Thread[#1,main,5,main])--connecting(DatabaseLogin(
+	platform=>DerbyPlatform
+	user name=> "clinica"
+	datasource URL=> "jdbc:derby://localhost:1527/clinica;create=true"
+))
+[EL Config]: connection: 2025-12-13 18:40:47.595--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--Connected: jdbc:derby://localhost:1527/clinica;create=true
+	User: clinica
+	Database: Apache Derby  Version: 10.16.1.1 - (1901046)
+	Driver: Apache Derby Network Client JDBC Driver  Version: 10.16.1.1 - (1901046)
+[EL Warning]: metadata: 2025-12-13 18:40:47.596--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [endereco] for the entity class [class com.ifpe.clinica.domain.Paciente] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.596--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [prontuario] for the entity class [class com.ifpe.clinica.domain.Paciente] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.596--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [paciente] for the entity class [class com.ifpe.clinica.domain.Prontuario] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.597--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [paciente] for the entity class [class com.ifpe.clinica.domain.Endereco] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.597--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [prontuario] for the entity class [class com.ifpe.clinica.domain.Medicamento] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.598--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [paciente] for the entity class [class com.ifpe.clinica.domain.Consulta] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2025-12-13 18:40:47.598--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [medico] for the entity class [class com.ifpe.clinica.domain.Consulta] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2025-12-13 18:40:47.602--ServerSession(216644009)--Thread(Thread[#1,main,5,main])--/file:/home/tassio/NetBeansProjects/clinica/target/classes/_clinicaPU login successful
+[EL Fine]: sql: 2025-12-13 18:40:47.603--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA DROP CONSTRAINT TBCONSULTAMEDICOID
+[EL Fine]: sql: 2025-12-13 18:40:47.615--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA DROP CONSTRAINT TBCNSULTAPCIENTEID
+[EL Fine]: sql: 2025-12-13 18:40:47.622--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PRONTUARIO DROP CONSTRAINT TBPRNTUARIOPCNTEID
+[EL Fine]: sql: 2025-12-13 18:40:47.628--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_MEDICO DROP CONSTRAINT TB_MEDICOID_PESSOA
+[EL Fine]: sql: 2025-12-13 18:40:47.632--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PACIENTE DROP CONSTRAINT TBPCIENTENDERECOID
+[EL Fine]: sql: 2025-12-13 18:40:47.638--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PACIENTE DROP CONSTRAINT TBPACIENTEIDPESSOA
+[EL Fine]: sql: 2025-12-13 18:40:47.642--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_MEDICAMENTO DROP CONSTRAINT TBMDCMENTOPRNTROID
+[EL Fine]: sql: 2025-12-13 18:40:47.651--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_EXAME_ANEXOS DROP CONSTRAINT TBXAMEANEXOSXAMEID
+[EL Fine]: sql: 2025-12-13 18:40:47.659--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA_EXAME DROP CONSTRAINT TBCNSLTEXAMECNSLTD
+[EL Fine]: sql: 2025-12-13 18:40:47.666--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA_EXAME DROP CONSTRAINT TBCNSULTAEXAMEXMID
+[EL Fine]: sql: 2025-12-13 18:40:47.672--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_EXAME
+[EL Fine]: sql: 2025-12-13 18:40:47.681--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_PESSOA
+[EL Fine]: sql: 2025-12-13 18:40:47.691--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_CONSULTA
+[EL Fine]: sql: 2025-12-13 18:40:47.701--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_PRONTUARIO
+[EL Fine]: sql: 2025-12-13 18:40:47.71--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_MEDICO
+[EL Fine]: sql: 2025-12-13 18:40:47.723--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_PACIENTE
+[EL Fine]: sql: 2025-12-13 18:40:47.736--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_MEDICAMENTO
+[EL Fine]: sql: 2025-12-13 18:40:47.746--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_ENDERECO
+[EL Fine]: sql: 2025-12-13 18:40:47.757--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_EXAME_ANEXOS
+[EL Fine]: sql: 2025-12-13 18:40:47.764--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DROP TABLE TB_CONSULTA_EXAME
+[EL Fine]: sql: 2025-12-13 18:40:47.778--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_EXAME (ID_EXAME BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_NOME VARCHAR(255) NOT NULL, PRIMARY KEY (ID_EXAME))
+[EL Fine]: sql: 2025-12-13 18:40:47.791--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_PESSOA (ID_PESSOA BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TIPO_PESSOA VARCHAR(31), TXT_NOME VARCHAR(255), PRIMARY KEY (ID_PESSOA))
+[EL Fine]: sql: 2025-12-13 18:40:47.804--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_CONSULTA (ID_CONSULTA BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, DT_CONSULTA TIMESTAMP NOT NULL, MEDICO_ID BIGINT, PACIENTE_ID BIGINT, PRIMARY KEY (ID_CONSULTA))
+[EL Fine]: sql: 2025-12-13 18:40:47.818--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_PRONTUARIO (ID_PRONTUARIO BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_DESCRICAO VARCHAR(500) NOT NULL, PACIENTE_ID BIGINT, PRIMARY KEY (ID_PRONTUARIO))
+[EL Fine]: sql: 2025-12-13 18:40:47.832--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_MEDICO (ID_PESSOA BIGINT NOT NULL, TXT_CRM VARCHAR(20) NOT NULL UNIQUE, TXT_ESPECIALIDADE VARCHAR(255), PRIMARY KEY (ID_PESSOA))
+[EL Fine]: sql: 2025-12-13 18:40:47.85--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_PACIENTE (ID_PESSOA BIGINT NOT NULL, TXT_CPF VARCHAR(11) NOT NULL UNIQUE, ENDERECO_ID BIGINT, PRIMARY KEY (ID_PESSOA))
+[EL Fine]: sql: 2025-12-13 18:40:47.868--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_MEDICAMENTO (ID_MEDICAMENTO BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_DOSE VARCHAR(50) NOT NULL, TXT_NOME VARCHAR(255) NOT NULL, PRONTUARIO_ID BIGINT, PRIMARY KEY (ID_MEDICAMENTO))
+[EL Fine]: sql: 2025-12-13 18:40:47.882--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_ENDERECO (ID_ENDERECO BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_CIDADE VARCHAR(100) NOT NULL, TXT_ESTADO VARCHAR(2) NOT NULL, TXT_RUA VARCHAR(255) NOT NULL, PRIMARY KEY (ID_ENDERECO))
+[EL Fine]: sql: 2025-12-13 18:40:47.897--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_EXAME_ANEXOS (EXAME_ID BIGINT, TXT_URL_ANEXO VARCHAR(512) NOT NULL)
+[EL Fine]: sql: 2025-12-13 18:40:47.904--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--CREATE TABLE TB_CONSULTA_EXAME (EXAME_ID BIGINT NOT NULL, CONSULTA_ID BIGINT NOT NULL, PRIMARY KEY (EXAME_ID, CONSULTA_ID))
+[EL Fine]: sql: 2025-12-13 18:40:47.915--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA ADD CONSTRAINT TBCONSULTAMEDICOID FOREIGN KEY (MEDICO_ID) REFERENCES TB_PESSOA (ID_PESSOA)
+[EL Fine]: sql: 2025-12-13 18:40:47.924--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA ADD CONSTRAINT TBCNSULTAPCIENTEID FOREIGN KEY (PACIENTE_ID) REFERENCES TB_PESSOA (ID_PESSOA)
+[EL Fine]: sql: 2025-12-13 18:40:47.933--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PRONTUARIO ADD CONSTRAINT TBPRNTUARIOPCNTEID FOREIGN KEY (PACIENTE_ID) REFERENCES TB_PESSOA (ID_PESSOA)
+[EL Fine]: sql: 2025-12-13 18:40:47.943--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_MEDICO ADD CONSTRAINT TB_MEDICOID_PESSOA FOREIGN KEY (ID_PESSOA) REFERENCES TB_PESSOA (ID_PESSOA)
+[EL Fine]: sql: 2025-12-13 18:40:47.948--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PACIENTE ADD CONSTRAINT TBPCIENTENDERECOID FOREIGN KEY (ENDERECO_ID) REFERENCES TB_ENDERECO (ID_ENDERECO)
+[EL Fine]: sql: 2025-12-13 18:40:47.96--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_PACIENTE ADD CONSTRAINT TBPACIENTEIDPESSOA FOREIGN KEY (ID_PESSOA) REFERENCES TB_PESSOA (ID_PESSOA)
+[EL Fine]: sql: 2025-12-13 18:40:47.967--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_MEDICAMENTO ADD CONSTRAINT TBMDCMENTOPRNTROID FOREIGN KEY (PRONTUARIO_ID) REFERENCES TB_PRONTUARIO (ID_PRONTUARIO)
+[EL Fine]: sql: 2025-12-13 18:40:47.983--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_EXAME_ANEXOS ADD CONSTRAINT TBXAMEANEXOSXAMEID FOREIGN KEY (EXAME_ID) REFERENCES TB_EXAME (ID_EXAME)
+[EL Fine]: sql: 2025-12-13 18:40:47.997--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA_EXAME ADD CONSTRAINT TBCNSLTEXAMECNSLTD FOREIGN KEY (CONSULTA_ID) REFERENCES TB_CONSULTA (ID_CONSULTA)
+[EL Fine]: sql: 2025-12-13 18:40:48.014--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--ALTER TABLE TB_CONSULTA_EXAME ADD CONSTRAINT TBCNSULTAEXAMEXMID FOREIGN KEY (EXAME_ID) REFERENCES TB_EXAME (ID_EXAME)
+[EL Fine]: sql: 2025-12-13 18:40:48.261--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Cleiton Rasta, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.266--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_PRONTUARIO, TXT_DESCRICAO, PACIENTE_ID FROM TB_PRONTUARIO WHERE (PACIENTE_ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2025-12-13 18:40:48.27--ClientSession(1566269351)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--UPDATE TB_PESSOA SET TXT_NOME = ? WHERE (ID_PESSOA = ?)
+	bind => [Joao Pedro, 3]
+[EL Fine]: sql: 2025-12-13 18:40:48.273--ClientSession(1566269351)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Cleiton Rasta, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.274--ClientSession(1566269351)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Joao Pedro, PACIENTE]
+]]></system-out>
+  </testcase>
+  <testcase name="testPersist" classname="domain.PacienteTest" time="0.016">
+    <system-out><![CDATA[[EL Fine]: sql: 2025-12-13 18:40:48.279--ClientSession(665641137)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--INSERT INTO TB_ENDERECO (TXT_CIDADE, TXT_ESTADO, TXT_RUA) VALUES (?, ?, ?)
+	bind => [Olinda, PE, Rua da Aurora]
+[EL Fine]: sql: 2025-12-13 18:40:48.283--ClientSession(665641137)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--INSERT INTO TB_PESSOA (TXT_NOME, TIPO_PESSOA) VALUES (?, ?)
+	bind => [Carlos Silva, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.287--ClientSession(665641137)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--INSERT INTO TB_PACIENTE (TXT_CPF, ENDERECO_ID, ID_PESSOA) VALUES (?, ?, ?)
+	bind => [1111111111, 4, 7]
+]]></system-out>
+  </testcase>
+  <testcase name="removePaciente" classname="domain.PacienteTest" time="0.018">
+    <system-out><![CDATA[[EL Fine]: sql: 2025-12-13 18:40:48.296--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Joao Pedro, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.298--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_CONSULTA, DT_CONSULTA, MEDICO_ID, PACIENTE_ID FROM TB_CONSULTA WHERE (PACIENTE_ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2025-12-13 18:40:48.302--ClientSession(1279852178)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DELETE FROM TB_PACIENTE WHERE (ID_PESSOA = ?)
+	bind => [3]
+[EL Fine]: sql: 2025-12-13 18:40:48.306--ClientSession(1279852178)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--DELETE FROM TB_PESSOA WHERE (ID_PESSOA = ?)
+	bind => [3]
+[EL Fine]: sql: 2025-12-13 18:40:48.31--ClientSession(1279852178)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Joao Pedro, PACIENTE]
+]]></system-out>
+  </testcase>
+  <testcase name="atualizarPaciente" classname="domain.PacienteTest" time="0.02">
+    <system-out><![CDATA[[EL Fine]: sql: 2025-12-13 18:40:48.314--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Maria Souza, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.316--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_ENDERECO, TXT_CIDADE, TXT_ESTADO, TXT_RUA FROM TB_ENDERECO WHERE (ID_ENDERECO = ?)
+	bind => [2]
+[EL Fine]: sql: 2025-12-13 18:40:48.32--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t1.ENDERECO_ID = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [2, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.325--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_PRONTUARIO, TXT_DESCRICAO, PACIENTE_ID FROM TB_PRONTUARIO WHERE (PACIENTE_ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2025-12-13 18:40:48.328--ClientSession(2090589929)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--UPDATE TB_PESSOA SET TXT_NOME = ? WHERE (ID_PESSOA = ?)
+	bind => [Wanessa Wolf, 2]
+[EL Fine]: sql: 2025-12-13 18:40:48.329--ClientSession(2090589929)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Maria Souza, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.33--ClientSession(2090589929)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.TXT_NOME = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [Wanessa Wolf, PACIENTE]
+]]></system-out>
+  </testcase>
+  <testcase name="testFindById" classname="domain.PacienteTest" time="0.026">
+    <system-out><![CDATA[[EL Fine]: sql: 2025-12-13 18:40:48.338--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t0.ID_PESSOA = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [1, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.349--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_ENDERECO, TXT_CIDADE, TXT_ESTADO, TXT_RUA FROM TB_ENDERECO WHERE (ID_ENDERECO = ?)
+	bind => [1]
+[EL Fine]: sql: 2025-12-13 18:40:48.352--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT t0.ID_PESSOA, t0.TIPO_PESSOA, t0.TXT_NOME, t1.ID_PESSOA, t1.TXT_CPF, t1.ENDERECO_ID FROM TB_PESSOA t0, TB_PACIENTE t1 WHERE ((t1.ENDERECO_ID = ?) AND ((t1.ID_PESSOA = t0.ID_PESSOA) AND (t0.TIPO_PESSOA = ?)))
+	bind => [1, PACIENTE]
+[EL Fine]: sql: 2025-12-13 18:40:48.354--ServerSession(216644009)--Connection(2123681939)--Thread(Thread[#1,main,5,main])--SELECT ID_PRONTUARIO, TXT_DESCRICAO, PACIENTE_ID FROM TB_PRONTUARIO WHERE (PACIENTE_ID = ?)
+	bind => [1]
+]]></system-out>
+  </testcase>
+</testsuite>
