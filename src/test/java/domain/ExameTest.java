@@ -70,14 +70,14 @@ public class ExameTest extends GenericTest{
                 "SELECT e FROM Exame e WHERE e.nome = :nome",
                 Exame.class);
         
-        query.setParameter("nome", "Tomografia Completa");
+        query.setParameter("nome", "Exame de Catarata");
         Exame exame = query.getSingleResult();
         Assertions.assertNotNull(exame);
 
         em.remove(exame);
         em.flush();
         
-        query.setParameter("nome", "Tomografia Completa");
+        query.setParameter("nome", "Exame de Catarata");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 

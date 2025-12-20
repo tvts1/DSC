@@ -70,14 +70,14 @@ public class MedicoTest extends GenericTest{
                 "SELECT m FROM Medico m WHERE m.nome = :nome",
                 Medico.class);
         
-        query.setParameter("nome", "Dr. Paulo");
+        query.setParameter("nome", "Dr. Johnes");
         Medico medico = query.getSingleResult();
         Assertions.assertNotNull(medico);
         
         em.remove(medico);
         em.flush();
         
-        query.setParameter("nome", "Dr. Paulo");
+        query.setParameter("nome", "Dr. Johnes");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 

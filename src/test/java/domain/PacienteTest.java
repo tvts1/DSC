@@ -77,14 +77,14 @@ public class PacienteTest extends GenericTest{
                 "SELECT p FROM Paciente p WHERE p.nome = :nome",
                 Paciente.class);
         
-        query.setParameter("nome", "Joao Pedro");
+        query.setParameter("nome", "Sandra Maria");
         Paciente paciente = query.getSingleResult();
         Assertions.assertNotNull(paciente);
         
         em.remove(paciente);
         em.flush();
         
-        query.setParameter("nome", "Joao Pedro");
+        query.setParameter("nome", "Sandra Maria");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 

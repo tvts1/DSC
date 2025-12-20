@@ -1,9 +1,13 @@
+domain/FotoPacienteTest.class
 domain/ProntuarioTest.class
 domain/ExameTest.class
 domain/MedicoTest.class
-domain/MedicamentoTest.class
 domain/PacienteTest.class
 domain/ConsultaTest.class
+domain/PagamentoTest.class
+domain/ContatoPacienteTest.class
+domain/MedicamentoTest.class
 domain/EnderecoTest.class
 util/DbUnitUtil.class
 domain/GenericTest.class
+domain/ConvenioTest.class

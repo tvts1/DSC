@@ -75,14 +75,14 @@ public class MedicamentoTest extends GenericTest{
                 "SELECT m FROM Medicamento m WHERE m.nome = :nome",
                 Medicamento.class);
         
-        query.setParameter("nome", "Amoxicilina");
+        query.setParameter("nome", "Losartana");
         Medicamento medicamento = query.getSingleResult();
         Assertions.assertNotNull(medicamento);
         
         em.remove(medicamento);
         em.flush();
         
-        query.setParameter("nome", "Amoxilina");
+        query.setParameter("nome", "Losartana");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 

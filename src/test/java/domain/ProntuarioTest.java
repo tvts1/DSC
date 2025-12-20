@@ -52,6 +52,7 @@ public class ProntuarioTest extends GenericTest {
         Assertions.assertNotNull(atualizado);
     }
     
+    @Test
     public void testAtualizaProntuarioMerge() {
         TypedQuery<Prontuario> query = em.createQuery(
                 "SELECT p FROM Prontuario p WHERE p.descricao = :descricao",
@@ -76,20 +77,21 @@ public class ProntuarioTest extends GenericTest {
         Assertions.assertNotNull(atualizado);
     }
     
+    @Test
     public void testRemoverProntuario() {
         TypedQuery<Prontuario> query = em.createQuery(
                 "SELECT p FROM Prontuario p WHERE p.descricao = :descricao",
                 Prontuario.class
         );
         
-        query.setParameter("descricao", "Paciente com dor de dente");
+        query.setParameter("descricao", "Paciente com dor de dedo");
         Prontuario prontuario = query.getSingleResult();
         Assertions.assertNotNull(prontuario);
         
         em.remove(prontuario);
         em.flush();
         
-        query.setParameter("descricao", "Paciente com dor de dente");
+        query.setParameter("descricao", "Paciente com dor de dedo");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 
