@@ -92,60 +92,57 @@ public class ConvenioTest extends GenericTest {
     }
 
     @Test
-    public void testBuscarPorCelular() {
-        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.contato.celular = :celular";
+    public void testConsultarPorTipo() {
+        String jpql = "SELECT c FROM Convenio c WHERE c.tipo = :tipo";
         
-        ContatoPaciente resultado = em.createQuery(jpql, ContatoPaciente.class)
-                .setParameter("celular", "8199998888")
-                .getSingleResult();
-
-        Assertions.assertNotNull(resultado);
-        Assertions.assertEquals("joao.silva@email.com", resultado.getContato().getEmail());
-    }
-
-    @Test
-    public void testBuscarPorObservacao() {
-        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.contato.observacoes LIKE :obs";
-        
-        List<ContatoPaciente> lista = em.createQuery(jpql, ContatoPaciente.class)
-                .setParameter("obs", "%atualizado%")
+        List<Convenio> particulares = em.createQuery(jpql, Convenio.class)
+                .setParameter("tipo", TipoConvenio.PARTICULAR)
                 .getResultList();
 
-        Assertions.assertFalse(lista.isEmpty());
-        Assertions.assertEquals("maria.souza@email.com", lista.get(0).getContato().getEmail());
+        Assertions.assertEquals(2, particulares.size());
     }
 
     @Test
-    public void testBuscarContatoPorNomePaciente() {
-        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.paciente.nome = :nome";
+    public void testConsultarPorCarenciaZero() {
+        String jpql = "SELECT c FROM Convenio c WHERE c.carenciaDias = 0";
         
-        ContatoPaciente resultado = em.createQuery(jpql, ContatoPaciente.class)
-                .setParameter("nome", "Maria Souza")
-                .getSingleResult();
+        List<Convenio> semCarencia = em.createQuery(jpql, Convenio.class)
+                .getResultList();
 
-        Assertions.assertNotNull(resultado);
-        Assertions.assertEquals("8197776666", resultado.getContato().getCelular());
+        Assertions.assertTrue(semCarencia.size() >= 2);
     }
 
     @Test
-    public void testContarContatosComEmergencia() {
-        String jpql = "SELECT COUNT(c) FROM ContatoPaciente c WHERE c.contato.telefoneEmergencia IS NOT NULL";
+    public void testConsultarPorNomeParcial() {
+        String jpql = "SELECT c FROM Convenio c WHERE c.nome LIKE :parteNome";
         
-        Long total = em.createQuery(jpql, Long.class)
+        Convenio hapvida = em.createQuery(jpql, Convenio.class)
+                .setParameter("parteNome", "HAP%")
                 .getSingleResult();
 
-        Assertions.assertTrue(total >= 4);
+        Assertions.assertNotNull(hapvida);
+        Assertions.assertEquals("HAPVIDA", hapvida.getNome());
     }
 
     @Test
-    public void testProjecaoContato() {
-        String jpql = "SELECT c.contato.email, c.contato.celular FROM ContatoPaciente c WHERE c.id = :id";
+    public void testMediaCarencia() {
+        String jpql = "SELECT AVG(c.carenciaDias) FROM Convenio c";
         
-        Object[] dados = em.createQuery(jpql, Object[].class)
-                .setParameter("id", 1L)
+        Double media = em.createQuery(jpql, Double.class)
                 .getSingleResult();
 
-        Assertions.assertEquals("joao.silva@email.com", dados[0]);
-        Assertions.assertNotNull(dados[1]);
+        Assertions.assertNotNull(media);
+        Assertions.assertTrue(media > 0);
+    }
+
+    @Test
+    public void testNomesComCarenciaAlta() {
+        String jpql = "SELECT c.nome FROM Convenio c WHERE c.carenciaDias > 10";
+        
+        List<String> nomes = em.createQuery(jpql, String.class)
+                .getResultList();
+
+        Assertions.assertTrue(nomes.contains("Unimed"));
+        Assertions.assertTrue(nomes.contains("HAPVIDA"));
     }
 }
