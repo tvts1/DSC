@@ -90,4 +90,62 @@ public class ConvenioTest extends GenericTest {
         Assertions.assertEquals("Unimed", c.getNome());
         Assertions.assertEquals(TipoConvenio.EMPRESARIAL, c.getTipo());
     }
+
+    @Test
+    public void testBuscarPorCelular() {
+        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.contato.celular = :celular";
+        
+        ContatoPaciente resultado = em.createQuery(jpql, ContatoPaciente.class)
+                .setParameter("celular", "8199998888")
+                .getSingleResult();
+
+        Assertions.assertNotNull(resultado);
+        Assertions.assertEquals("joao.silva@email.com", resultado.getContato().getEmail());
+    }
+
+    @Test
+    public void testBuscarPorObservacao() {
+        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.contato.observacoes LIKE :obs";
+        
+        List<ContatoPaciente> lista = em.createQuery(jpql, ContatoPaciente.class)
+                .setParameter("obs", "%atualizado%")
+                .getResultList();
+
+        Assertions.assertFalse(lista.isEmpty());
+        Assertions.assertEquals("maria.souza@email.com", lista.get(0).getContato().getEmail());
+    }
+
+    @Test
+    public void testBuscarContatoPorNomePaciente() {
+        String jpql = "SELECT c FROM ContatoPaciente c WHERE c.paciente.nome = :nome";
+        
+        ContatoPaciente resultado = em.createQuery(jpql, ContatoPaciente.class)
+                .setParameter("nome", "Maria Souza")
+                .getSingleResult();
+
+        Assertions.assertNotNull(resultado);
+        Assertions.assertEquals("8197776666", resultado.getContato().getCelular());
+    }
+
+    @Test
+    public void testContarContatosComEmergencia() {
+        String jpql = "SELECT COUNT(c) FROM ContatoPaciente c WHERE c.contato.telefoneEmergencia IS NOT NULL";
+        
+        Long total = em.createQuery(jpql, Long.class)
+                .getSingleResult();
+
+        Assertions.assertTrue(total >= 4);
+    }
+
+    @Test
+    public void testProjecaoContato() {
+        String jpql = "SELECT c.contato.email, c.contato.celular FROM ContatoPaciente c WHERE c.id = :id";
+        
+        Object[] dados = em.createQuery(jpql, Object[].class)
+                .setParameter("id", 1L)
+                .getSingleResult();
+
+        Assertions.assertEquals("joao.silva@email.com", dados[0]);
+        Assertions.assertNotNull(dados[1]);
+    }
 }
