@@ -4,14 +4,23 @@
     <!-- ===================== -->
     <!-- PESSOA -->
     <!-- ===================== -->
-    <TB_PESSOA TXT_NOME="João Silva" TIPO_PESSOA="PACIENTE"/>
-    <TB_PESSOA TXT_NOME="Maria Souza" TIPO_PESSOA="PACIENTE"/>
-    <TB_PESSOA TXT_NOME="Cleiton Rasta" TIPO_PESSOA="PACIENTE"/>
-    <TB_PESSOA TXT_NOME="Dr. Carlos" TIPO_PESSOA="MEDICO"/>
-    <TB_PESSOA TXT_NOME="Dra. Ana" TIPO_PESSOA="MEDICO"/>
-    <TB_PESSOA TXT_NOME="Dr. Elton" TIPO_PESSOA="MEDICO"/>
-    <TB_PESSOA TXT_NOME="Dr. Johnes" TIPO_PESSOA="MEDICO"/>
-    <TB_PESSOA TXT_NOME="Sandra Maria" TIPO_PESSOA="PACIENTE"/>
+    <TB_PESSOA TXT_NOME="João Silva" TIPO_PESSOA="PACIENTE"/>    
+    <TB_PESSOA TXT_NOME="Maria Souza" TIPO_PESSOA="PACIENTE"/>   
+    <TB_PESSOA TXT_NOME="Cleiton Rasta" TIPO_PESSOA="PACIENTE"/> 
+    <TB_PESSOA TXT_NOME="Dr. Carlos" TIPO_PESSOA="MEDICO"/>      
+    <TB_PESSOA TXT_NOME="Dra. Ana" TIPO_PESSOA="MEDICO"/>         
+    <TB_PESSOA TXT_NOME="Dr. Elton" TIPO_PESSOA="MEDICO"/>       
+    <TB_PESSOA TXT_NOME="Dr. Johnes" TIPO_PESSOA="MEDICO"/>      
+    <TB_PESSOA TXT_NOME="Sandra Maria" TIPO_PESSOA="PACIENTE"/>  
+    
+    <TB_PESSOA TXT_NOME="Ricardo Oliveira" TIPO_PESSOA="PACIENTE"/> 
+    <TB_PESSOA TXT_NOME="Dra. Roberta" TIPO_PESSOA="MEDICO"/>       
+    <TB_PESSOA TXT_NOME="Fernando Costa" TIPO_PESSOA="PACIENTE"/>   
+    <TB_PESSOA TXT_NOME="Dr. Marcio" TIPO_PESSOA="MEDICO"/>
+    <TB_PESSOA TXT_NOME="Juliana Paes" TIPO_PESSOA="PACIENTE"/>
+    <TB_PESSOA TXT_NOME="Marcos Frota" TIPO_PESSOA="PACIENTE"/>
+    <TB_PESSOA TXT_NOME="Dra. Beatriz" TIPO_PESSOA="MEDICO"/>
+    <TB_PESSOA TXT_NOME="Dr. Henrique" TIPO_PESSOA="MEDICO"/>    ```
 
     <!-- ===================== -->
     <!-- ENDERECO -->
@@ -20,6 +29,11 @@
     <TB_ENDERECO TXT_RUA="Rua B" TXT_CIDADE="Olinda" TXT_ESTADO="PE"/>
     <TB_ENDERECO TXT_RUA="Rua C" TXT_CIDADE="Olinda" TXT_ESTADO="PE"/>
     <TB_ENDERECO TXT_RUA="Rua D" TXT_CIDADE="Sao Paulo" TXT_ESTADO="SP"/>
+    
+    <TB_ENDERECO TXT_RUA="Av. Paulista" TXT_CIDADE="Sao Paulo" TXT_ESTADO="SP"/> 
+    <TB_ENDERECO TXT_RUA="Rua das Flores" TXT_CIDADE="Curitiba" TXT_ESTADO="PR"/> 
+    <TB_ENDERECO TXT_RUA="Rua do Sol" TXT_CIDADE="Sao Luis" TXT_ESTADO="MA"/>     
+    <TB_ENDERECO TXT_RUA="Beira Mar" TXT_CIDADE="Fortaleza" TXT_ESTADO="CE"/>    ```
 
     <!-- ===================== -->
     <!-- PACIENTE -->
@@ -28,6 +42,13 @@
     <TB_PACIENTE ID_PESSOA="2" TXT_CPF="98765432100" ENDERECO_ID="2"/>
     <TB_PACIENTE ID_PESSOA="3" TXT_CPF="12345712342"/>
     <TB_PACIENTE ID_PESSOA="8" TXT_CPF="86574398123"/>
+    
+    <TB_PACIENTE ID_PESSOA="9" TXT_CPF="55544433322" ENDERECO_ID="5"/>
+    <TB_PACIENTE ID_PESSOA="11" TXT_CPF="11122233344" ENDERECO_ID="6"/>
+    <TB_PACIENTE ID_PESSOA="4" TXT_CPF="99900011122" ENDERECO_ID="7"/>
+    <TB_PACIENTE ID_PESSOA="5" TXT_CPF="77766655544"/>
+    <TB_PACIENTE ID_PESSOA="13" TXT_CPF="22233344455" ENDERECO_ID="8"/>
+    <TB_PACIENTE ID_PESSOA="14" TXT_CPF="99988877766"/>
 
     <!-- ===================== -->
     <!-- CONTATO_PACIENTE -->
@@ -39,7 +60,6 @@
         TXT_TELEFONE_EMERGENCIA="8188887777"
         TXT_OBSERVACOES="Contato principal"
         PACIENTE_ID="1"/>
-
     <TB_CONTATO_PACIENTE
         TXT_TELEFONE="8132221111"
         TXT_CELULAR="8197776666"
@@ -47,7 +67,6 @@
         TXT_TELEFONE_EMERGENCIA="8196665555"
         TXT_OBSERVACOES="Contato atualizado"
         PACIENTE_ID="2"/>
-
     <TB_CONTATO_PACIENTE
         TXT_TELEFONE="8131112222"
         TXT_CELULAR="8195554444"
@@ -55,14 +74,41 @@
         TXT_TELEFONE_EMERGENCIA="8184443333"
         TXT_OBSERVACOES="Contato residencial"
         PACIENTE_ID="3"/>
-
+    
     <TB_CONTATO_PACIENTE
         TXT_TELEFONE="8134445555"
         TXT_CELULAR="8193332222"
         TXT_EMAIL="ana.lima@email.com"
         TXT_TELEFONE_EMERGENCIA="8182221111"
         TXT_OBSERVACOES="Contato alternativo"/>
-
+    <TB_CONTATO_PACIENTE
+        TXT_TELEFONE="1133334444"
+        TXT_CELULAR="11911112222"
+        TXT_EMAIL="ricardo.oliveira@email.com"
+        TXT_TELEFONE_EMERGENCIA="11988887777"
+        TXT_OBSERVACOES="Contato comercial"
+        PACIENTE_ID="9"/>
+    <TB_CONTATO_PACIENTE
+        TXT_TELEFONE="4130304040"
+        TXT_CELULAR="41922223333"
+        TXT_EMAIL="fernando.costa@email.com"
+        TXT_TELEFONE_EMERGENCIA="41977776666"
+        TXT_OBSERVACOES="Preferência por WhatsApp"
+        PACIENTE_ID="11"/>
+    <TB_CONTATO_PACIENTE
+        TXT_TELEFONE="8134440000"
+        TXT_CELULAR="81955556666"
+        TXT_EMAIL="paciente.extra4@email.com"
+        TXT_TELEFONE_EMERGENCIA="81944443333"
+        TXT_OBSERVACOES="Contato de recado"
+        PACIENTE_ID="4"/>
+    <TB_CONTATO_PACIENTE
+        TXT_TELEFONE="8132228888"
+        TXT_CELULAR="81911110000"
+        TXT_EMAIL="paciente.extra5@email.com"
+        TXT_TELEFONE_EMERGENCIA="81900001111"
+        TXT_OBSERVACOES="Contato de emergência (Irmão)"
+        PACIENTE_ID="5"/>
     <!-- ===================== -->
     <!-- CONVENIO -->
     <!-- ===================== -->
@@ -70,6 +116,12 @@
     <TB_CONVENIO TXT_NOME="SUS" TIPO_CONVENIO="PUBLICO" NR_CARENCIA_DIAS="0"/>
     <TB_CONVENIO TXT_NOME="Particular" TIPO_CONVENIO="PARTICULAR" NR_CARENCIA_DIAS="0"/>
     <TB_CONVENIO TXT_NOME="HAPVIDA" TIPO_CONVENIO="PARTICULAR" NR_CARENCIA_DIAS="25"/>
+
+    <TB_CONVENIO TXT_NOME="Bradesco Saude" TIPO_CONVENIO="EMPRESARIAL" NR_CARENCIA_DIAS="15"/>
+    <TB_CONVENIO TXT_NOME="Amil" TIPO_CONVENIO="EMPRESARIAL" NR_CARENCIA_DIAS="60"/>
+    <TB_CONVENIO TXT_NOME="Casssi" TIPO_CONVENIO="OUTROS" NR_CARENCIA_DIAS="10"/>
+    <TB_CONVENIO TXT_NOME="SulAmerica" TIPO_CONVENIO="PARTICULAR" NR_CARENCIA_DIAS="90"/>
+    <TB_CONVENIO TXT_NOME="Brasil Saude" TIPO_CONVENIO="EMPRESARIAL" NR_CARENCIA_DIAS="0"/>
 
     <!-- ===================== -->
     <!-- FOTO_PACIENTE -->
@@ -83,7 +135,6 @@
         DT_UPLOAD="2024-10-01 10:00:00"
         TXT_CATEGORIA="FOTO_PERFIL"
         PACIENTE_ID="1"/>
-
     <TB_FOTO_PACIENTE
         TXT_TITULO="Documento Convênio"
         TXT_DESCRICAO="Carteirinha do convênio"
@@ -93,7 +144,6 @@
         DT_UPLOAD="2024-10-05 11:30:00"
         TXT_CATEGORIA="DOCUMENTO_CONVENIO"
         PACIENTE_ID="2"/>
-
     <TB_FOTO_PACIENTE
         TXT_TITULO="Foto de Perfil Atualizada"
         TXT_DESCRICAO="Foto recente do paciente"
@@ -103,7 +153,6 @@
         DT_UPLOAD="2024-10-10 09:15:00"
         TXT_CATEGORIA="FOTO_PERFIL"
         PACIENTE_ID="3"/>
-
     <TB_FOTO_PACIENTE
         TXT_TITULO="Foto Antiga"
         TXT_DESCRICAO="Imagem do RG do paciente"
@@ -113,6 +162,43 @@
         DT_UPLOAD="2024-10-12 14:45:00"
         TXT_CATEGORIA="DOCUMENTO_IDENTIDADE"
         PACIENTE_ID="4"/>
+    
+    <TB_FOTO_PACIENTE
+        TXT_TITULO="Foto Perfil Novo"
+        TXT_DESCRICAO="Foto de rosto do paciente"
+        BIN_IMAGEM="iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB"
+        TXT_TIPO_IMAGEM="PNG"
+        TXT_TAMANHO="25000"
+        DT_UPLOAD="2026-01-20 08:00:00"
+        TXT_CATEGORIA="FOTO_PERFIL"
+        PACIENTE_ID="9"/>
+    <TB_FOTO_PACIENTE
+        TXT_TITULO="RG Digitalizado"
+        TXT_DESCRICAO="Frente e verso do RG"
+        BIN_IMAGEM="R0lGODlhAQABAIAAAAUEBAAAAA=="
+        TXT_TIPO_IMAGEM="JPG"
+        TXT_TAMANHO="62000"
+        DT_UPLOAD="2026-01-21 14:20:00"
+        TXT_CATEGORIA="DOCUMENTO_IDENTIDADE"
+        PACIENTE_ID="11"/>
+    <TB_FOTO_PACIENTE
+        TXT_TITULO="Carteira Bradesco"
+        TXT_DESCRICAO="Comprovante do plano de saúde"
+        BIN_IMAGEM="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQ"
+        TXT_TIPO_IMAGEM="PNG"
+        TXT_TAMANHO="45000"
+        DT_UPLOAD="2026-01-22 10:30:00"
+        TXT_CATEGORIA="DOCUMENTO_CONVENIO"
+        PACIENTE_ID="4"/>
+    <TB_FOTO_PACIENTE
+        TXT_TITULO="Exame Toxicológico"
+        TXT_DESCRICAO="Anexo de exame admissional"
+        BIN_IMAGEM="R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAA"
+        TXT_TIPO_IMAGEM="PDF"
+        TXT_TAMANHO="102400"
+        DT_UPLOAD="2026-01-23 16:45:00"
+        TXT_CATEGORIA="OUTROS"
+        PACIENTE_ID="5"/>
 
     <!-- ===================== -->
     <!-- PRONTUARIO -->
@@ -121,7 +207,11 @@
     <TB_PRONTUARIO TXT_DESCRICAO="Paciente com alergia" PACIENTE_ID="2"/>
     <TB_PRONTUARIO TXT_DESCRICAO="Paciente com dor de cabeca"/>
     <TB_PRONTUARIO TXT_DESCRICAO="Paciente com dor de dedo"/>
-
+    
+    <TB_PRONTUARIO TXT_DESCRICAO="Paciente em acompanhamento pós-operatório" PACIENTE_ID="9"/>
+    <TB_PRONTUARIO TXT_DESCRICAO="Paciente apresenta sintomas de gripe forte" PACIENTE_ID="11"/>
+    <TB_PRONTUARIO TXT_DESCRICAO="Relato de insônia crônica e ansiedade" PACIENTE_ID="4"/>
+    <TB_PRONTUARIO TXT_DESCRICAO="Check-up anual: sem alterações significativas" PACIENTE_ID="5"/>
     <!-- ===================== -->
     <!-- MEDICO -->
     <!-- ===================== -->
@@ -129,6 +219,11 @@
     <TB_MEDICO ID_PESSOA="5" TXT_CRM="CRM456" TXT_ESPECIALIDADE="PEDIATRA"/>
     <TB_MEDICO ID_PESSOA="6" TXT_CRM="CRM999" TXT_ESPECIALIDADE="CLINICO_GERAL"/>
     <TB_MEDICO ID_PESSOA="7" TXT_CRM="CRM176" TXT_ESPECIALIDADE="CLINICO_GERAL"/>
+    
+    <TB_MEDICO ID_PESSOA="10" TXT_CRM="CRM882" TXT_ESPECIALIDADE="DERMATOLOGISTA"/>
+    <TB_MEDICO ID_PESSOA="12" TXT_CRM="CRM773" TXT_ESPECIALIDADE="ORTOPEDISTA"/>
+    <TB_MEDICO ID_PESSOA="15" TXT_CRM="CRM111" TXT_ESPECIALIDADE="GINECOLOGISTA"/>
+    <TB_MEDICO ID_PESSOA="16" TXT_CRM="CRM222" TXT_ESPECIALIDADE="NEUROLOGISTA"/>
 
     <!-- ===================== -->
     <!-- EXAME -->
@@ -137,14 +232,24 @@
     <TB_EXAME TXT_NOME="Raio-X"/>
     <TB_EXAME TXT_NOME="Eletrocardiograma"/>
     <TB_EXAME TXT_NOME="Exame de Catarata"/>
-
+    
+    <TB_EXAME TXT_NOME="Glicemia em Jejum"/>
+    <TB_EXAME TXT_NOME="Ressonância Magnética"/>
+    <TB_EXAME TXT_NOME="Teste de Esforço"/>
+    <TB_EXAME TXT_NOME="Urina Tipo 1"/>
     <!-- ===================== -->
     <!-- EXAME_ANEXOS -->
     <!-- ===================== -->
     <TB_EXAME_ANEXOS EXAME_ID="1" TXT_URL_ANEXO="https://arquivos.clinica.com/laudo/hemograma-10.pdf"/>
     <TB_EXAME_ANEXOS EXAME_ID="2" TXT_URL_ANEXO="https://arquivos.clinica.com/imagens/hemograma-celulas.jpg"/>
     <TB_EXAME_ANEXOS EXAME_ID="3" TXT_URL_ANEXO="https://arquivos.clinica.com/laudo/raiox-11.png"/>
-
+    
+    <TB_EXAME_ANEXOS EXAME_ID="5" TXT_URL_ANEXO="https://arquivos.clinica.com/laudos/glicemia-result.pdf"/>
+    <TB_EXAME_ANEXOS EXAME_ID="6" TXT_URL_ANEXO="https://arquivos.clinica.com/imagens/ressonancia-lombar.jpg"/>
+    <TB_EXAME_ANEXOS EXAME_ID="7" TXT_URL_ANEXO="https://arquivos.clinica.com/laudos/teste-esforco-final.pdf"/>
+    <TB_EXAME_ANEXOS EXAME_ID="8" TXT_URL_ANEXO="https://arquivos.clinica.com/laudos/sumario-urina.pdf"/>
+    
+    
     <!-- ===================== -->
     <!-- MEDICAMENTO -->
     <!-- ===================== -->
@@ -152,7 +257,11 @@
     <TB_MEDICAMENTO TXT_NOME="Ibuprofeno" TXT_DOSE="200mg" PRONTUARIO_ID="2"/>
     <TB_MEDICAMENTO TXT_NOME="Dramin" TXT_DOSE="1000mg" PRONTUARIO_ID="3"/>
     <TB_MEDICAMENTO TXT_NOME="Losartana" TXT_DOSE="250mg"/>
-
+    
+    <TB_MEDICAMENTO TXT_NOME="Tupiramato" TXT_DOSE="1200mg" PRONTUARIO_ID="5"/>
+    <TB_MEDICAMENTO TXT_NOME="Alprazolam" TXT_DOSE="750mg" PRONTUARIO_ID="6"/>
+    <TB_MEDICAMENTO TXT_NOME="Omeprazol" TXT_DOSE="20mg" PRONTUARIO_ID="7"/>
+    <TB_MEDICAMENTO TXT_NOME="Sertralina" TXT_DOSE="50mg" PRONTUARIO_ID="8"/>
     <!-- ===================== -->
     <!-- CONSULTA -->
     <!-- ===================== -->
@@ -161,14 +270,22 @@
     <TB_CONSULTA DT_CONSULTA="2025-12-18 17:30:00"/>
     <TB_CONSULTA DT_CONSULTA="2025-05-14 18:30:00"/>
     <TB_CONSULTA DT_CONSULTA="2025-06-21 12:30:00"/>
-
+    
+    <TB_CONSULTA DT_CONSULTA="2026-02-01 10:00:00" MEDICO_ID="10" PACIENTE_ID="9"/>
+    <TB_CONSULTA DT_CONSULTA="2026-02-05 14:00:00" MEDICO_ID="12" PACIENTE_ID="11"/>
+    <TB_CONSULTA DT_CONSULTA="2026-02-10 09:30:00" MEDICO_ID="4" PACIENTE_ID="5"/>
+    <TB_CONSULTA DT_CONSULTA="2026-02-15 16:45:00" MEDICO_ID="5" PACIENTE_ID="4"/>
     <!-- ===================== -->
     <!-- CONSULTA_EXAME -->
     <!-- ===================== -->
     <TB_CONSULTA_EXAME CONSULTA_ID="1" EXAME_ID="1"/>
     <TB_CONSULTA_EXAME CONSULTA_ID="1" EXAME_ID="2"/>
     <TB_CONSULTA_EXAME CONSULTA_ID="2" EXAME_ID="1"/>
-
+    
+    <TB_CONSULTA_EXAME CONSULTA_ID="6" EXAME_ID="5"/>
+    <TB_CONSULTA_EXAME CONSULTA_ID="6" EXAME_ID="6"/>
+    <TB_CONSULTA_EXAME CONSULTA_ID="7" EXAME_ID="7"/>
+    <TB_CONSULTA_EXAME CONSULTA_ID="7" EXAME_ID="8"/>
     <!-- ===================== -->
     <!-- PAGAMENTO -->
     <!-- ===================== -->
@@ -221,4 +338,52 @@
         DT_GERACAO="2024-10-18 10:30:00"
         TXT_OBSERVACOES="Pagamento a ser realizado em dinheiro na recepção"/>
 
+    <TB_PAGAMENTO
+        CONSULTA_ID="6"
+        FORMA_PAGAMENTO="PIX"
+        STATUS_PAGAMENTO="PAGO"
+        VALOR_TOTAL="250.00"
+        VALOR_PAGO="250.00"
+        VALOR_DESCONTO="0.00"
+        VALOR_ACRESCIMO="0.00"
+        DT_GERACAO="2026-02-01 10:00:00"
+        DT_PAGAMENTO="2026-02-01 10:05:00"
+        TXT_CODIGO_TRANSACAO="PIX998877"
+        TXT_OBSERVACOES="Pagamento instantâneo via QR Code"/>
+
+    <TB_PAGAMENTO
+        CONSULTA_ID="7"
+        CONVENIO_ID="5"
+        FORMA_PAGAMENTO="CONVENIO"
+        STATUS_PAGAMENTO="PAGO"
+        VALOR_TOTAL="300.00"
+        VALOR_PAGO="0.00"
+        VALOR_DESCONTO="300.00"
+        DT_GERACAO="2026-02-05 13:30:00"
+        DT_PAGAMENTO="2026-02-05 14:00:00"
+        TXT_OBSERVACOES="Faturamento via convênio Bradesco"/>
+
+    <TB_PAGAMENTO
+        CONSULTA_ID="8"
+        FORMA_PAGAMENTO="CARTAO_DEBITO"
+        STATUS_PAGAMENTO="PAGO"
+        VALOR_TOTAL="170.00"
+        VALOR_PAGO="170.00"
+        VALOR_DESCONTO="0.00"
+        VALOR_ACRESCIMO="0.00"
+        DT_GERACAO="2026-02-10 09:00:00"
+        DT_PAGAMENTO="2026-02-10 09:40:00"
+        TXT_CODIGO_TRANSACAO="DEB554433"
+        TXT_OBSERVACOES="Pagamento em débito presencial"/>
+
+    <TB_PAGAMENTO
+        CONSULTA_ID="9"
+        FORMA_PAGAMENTO="DINHEIRO"
+        STATUS_PAGAMENTO="ESTORNADO"
+        VALOR_TOTAL="100.00"
+        VALOR_PAGO="0.00"
+        VALOR_DESCONTO="0.00"
+        VALOR_ACRESCIMO="0.00"
+        DT_GERACAO="2026-02-15 16:00:00"
+        TXT_OBSERVACOES="Consulta cancelada pelo paciente; valor não cobrado"/>
 </dataset>
