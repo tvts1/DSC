@@ -17,7 +17,7 @@ public abstract class GenericTest {
     protected EntityTransaction et;
 
     @BeforeAll
-    public void setUpClass() throws Exception {
+    public void setUpClass() throws Exception{
         emf = Persistence.createEntityManagerFactory("clinicaPU");
         DbUnitUtil.insertData();
     }

@@ -10,7 +10,7 @@ public class EnderecoTest extends GenericTest {
     @Test
     public void testPersist() {
         Endereco end = new Endereco();
-        end.setRua("Rua Nova");
+        end.setRua("Jose da Luz");
         end.setCidade("Olinda");
         end.setEstado("PE");
 
@@ -25,7 +25,7 @@ public class EnderecoTest extends GenericTest {
                 "SELECT e FROM Endereco e WHERE e.rua = :rua",
                 Endereco.class);
 
-        query.setParameter("rua", "Rua C");  // Busca Rua C (não Rua A)
+        query.setParameter("rua", "Rua C");
         Endereco endereco = query.getSingleResult();
         Assertions.assertNotNull(endereco);
 

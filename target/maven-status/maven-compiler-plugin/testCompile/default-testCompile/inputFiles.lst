@@ -10,4 +10,15 @@
 /home/tassio/NetBeansProjects/clinica/src/test/java/domain/PacienteTest.java
 /home/tassio/NetBeansProjects/clinica/src/test/java/domain/PagamentoTest.java
 /home/tassio/NetBeansProjects/clinica/src/test/java/domain/ProntuarioTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/ConsultaJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/ContatoPacienteJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/ConvenioJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/EnderecoJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/ExameJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/FotoPacienteJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/MedicamentoJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/MedicoJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/PacienteJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/PagamentoJPQLTest.java
+/home/tassio/NetBeansProjects/clinica/src/test/java/jpql/ProntuarioJPQLTest.java
 /home/tassio/NetBeansProjects/clinica/src/test/java/util/DbUnitUtil.java
