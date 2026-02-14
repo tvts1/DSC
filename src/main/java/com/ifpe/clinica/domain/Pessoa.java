@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "TB_PESSOA")
@@ -22,6 +24,8 @@ public abstract class Pessoa{
     @Column(name = "ID_PESSOA")
     protected Long id;
 
+    @NotBlank(message = "O nome não pode estar vazio")
+    @Size(max = 255, message = "O nome deve ter no máximo 255 caracteres")
     @Column(name = "TXT_NOME")
     protected String nome;
 

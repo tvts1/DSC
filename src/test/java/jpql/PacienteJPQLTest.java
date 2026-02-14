@@ -19,7 +19,7 @@ public class PacienteJPQLTest extends GenericTest {
         TypedQuery<Paciente> query = em.createQuery(jpql, Paciente.class);
         query.setParameter("estado", "PE");
         query.setParameter("nome", "João%");
-        query.setParameter("cpf", "98765432100");
+        query.setParameter("cpf", "24867822060"); 
 
         List<Paciente> resultados = query.getResultList();
 

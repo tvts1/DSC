@@ -1,11 +1,13 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import java.io.Serializable;
 
 @Embeddable
 public class Contato implements Serializable {
 
+    @Pattern(regexp = "\\d{8,20}", message = "Telefone deve conter apenas números")
     @Column(name = "TXT_TELEFONE", length = 20)
     private String telefone;
 

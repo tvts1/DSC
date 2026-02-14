@@ -1,6 +1,7 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,6 +15,7 @@ public class Exame {
     @Column(name = "ID_EXAME")
     private Long id;
 
+    @NotBlank(message = "O nome do exame é obrigatório")
     @Column(name = "TXT_NOME", length = 255, nullable = false)
     private String nome;
 

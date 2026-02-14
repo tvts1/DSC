@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: validation.EnderecoValidationTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.581 s <<< FAILURE! -- in validation.EnderecoValidationTest
+validation.EnderecoValidationTest.testEnderecoSemRua -- Time elapsed: 0.004 s <<< ERROR!
+jakarta.persistence.RollbackException: Transaction "rolled back" because transaction was set to RollbackOnly.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:146)
+	at domain.GenericTest.tearDown(GenericTest.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+validation.EnderecoValidationTest.testEnderecoEstadoInvalido -- Time elapsed: 0.001 s <<< ERROR!
+jakarta.persistence.RollbackException: Transaction "rolled back" because transaction was set to RollbackOnly.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:146)
+	at domain.GenericTest.tearDown(GenericTest.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

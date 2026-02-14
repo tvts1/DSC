@@ -27,8 +27,8 @@ public class ConsultaJPQLTest extends GenericTest {
         String jpql = "SELECT c FROM Consulta c WHERE c.data BETWEEN :inicio AND :fim ORDER BY c.data ASC";
 
         TypedQuery<Consulta> query = em.createQuery(jpql, Consulta.class);
-        query.setParameter("inicio", java.time.LocalDateTime.parse("2024-10-01T00:00:00"));
-        query.setParameter("fim", java.time.LocalDateTime.parse("2024-10-31T23:59:59"));
+        query.setParameter("inicio", java.time.LocalDateTime.parse("2026-06-01T00:00:00"));
+        query.setParameter("fim", java.time.LocalDateTime.parse("2026-07-31T23:59:59"));
 
         List<Consulta> resultados = query.getResultList();
 

@@ -1,6 +1,9 @@
 package com.ifpe.clinica.domain;
 
+import com.ifpe.clinica.validation.DiaUtil;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +18,18 @@ public class Consulta {
     @Column(name = "ID_CONSULTA")
     private Long id;
     
+    @NotNull(message = "A data da consulta é obrigatória")
+    @Future(message = "A consulta deve ser agendada para o futuro")
+    @DiaUtil(message = "Consultas apenas em dias úteis")
     @Column(name = "DT_CONSULTA", nullable = false)
     private LocalDateTime data;
 
+    @NotNull(message = "O médico é obrigatório")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEDICO_ID")
     private Medico medico;
 
+    @NotNull(message = "O paciente é obrigatório")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PACIENTE_ID")
     private Paciente paciente;

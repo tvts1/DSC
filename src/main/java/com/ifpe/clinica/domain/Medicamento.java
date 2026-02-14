@@ -1,6 +1,7 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -12,9 +13,11 @@ public class Medicamento {
     @Column(name = "ID_MEDICAMENTO")
     private Long id;
 
+    @NotBlank(message = "O nome do medicamento é obrigatório")
     @Column(name = "TXT_NOME", length = 255, nullable = false)
     private String nome;
 
+    @NotBlank(message = "A dose é obrigatória")
     @Column(name = "TXT_DOSE", length = 50, nullable = false)
     private String dose;
 

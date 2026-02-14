@@ -1,6 +1,8 @@
 package com.ifpe.clinica.domain;
 
+import com.ifpe.clinica.validation.EstadoValido;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -12,12 +14,16 @@ public class Endereco {
     @Column(name = "ID_ENDERECO")
     private Long id;
 
+    @NotBlank(message = "A rua é obrigatória")
     @Column(name = "TXT_RUA", nullable = false, length = 255)
     private String rua;
 
+    @NotBlank(message = "A cidade é obrigatória")
     @Column(name = "TXT_CIDADE", nullable = false, length = 100)
     private String cidade;
 
+    @NotBlank(message = "O estado é obrigatório")
+    @EstadoValido
     @Column(name = "TXT_ESTADO", nullable = false, length = 2)
     private String estado;
 

@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "TB_CONVENIO")
@@ -19,6 +21,7 @@ public class Convenio {
     @Column(name = "ID_CONVENIO")
     private Long id;
 
+    @NotBlank(message = "O nome do convênio é obrigatório")
     @Column(name = "TXT_NOME", nullable = false)
     private String nome;
 
@@ -26,6 +29,7 @@ public class Convenio {
     @Column(name = "TIPO_CONVENIO", nullable = false)
     private TipoConvenio tipo;
 
+    @Min(value = 0, message = "A carência não pode ser negativa")
     @Column(name = "NR_CARENCIA_DIAS")
     private Integer carenciaDias;
 

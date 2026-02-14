@@ -3,6 +3,9 @@ package com.ifpe.clinica.domain;
 import com.ifpe.clinica.enums.FormaPagamento;
 import com.ifpe.clinica.enums.StatusPagamento;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -24,6 +27,7 @@ public class Pagamento {
     @JoinColumn(name = "CONVENIO_ID")
     private Convenio convenio;
 
+    @NotNull(message = "A forma de pagamento é obrigatória")
     @Enumerated(EnumType.STRING)
     @Column(name = "FORMA_PAGAMENTO", nullable = false)
     private FormaPagamento formaPagamento;
@@ -32,6 +36,8 @@ public class Pagamento {
     @Column(name = "STATUS_PAGAMENTO", nullable = false)
     private StatusPagamento status;
 
+    @NotNull(message = "O valor total é obrigatório")
+    @Positive(message = "O valor total deve ser positivo")
     @Column(name = "VALOR_TOTAL", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal;
 
@@ -44,6 +50,7 @@ public class Pagamento {
     @Column(name = "VALOR_ACRESCIMO", precision = 10, scale = 2)
     private BigDecimal acrescimo;
 
+    @PastOrPresent
     @Column(name = "DT_GERACAO", nullable = false)
     private LocalDateTime dataGeracao = LocalDateTime.now();
 

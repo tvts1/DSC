@@ -2,6 +2,8 @@ package com.ifpe.clinica.domain;
 
 import com.ifpe.clinica.enums.Especialidade;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +14,7 @@ import java.util.Objects;
 @PrimaryKeyJoinColumn(name = "ID_PESSOA", referencedColumnName = "ID_PESSOA")
 public class Medico extends Pessoa {
     
+    @NotBlank(message = "O CRM é obrigatório")
     @Column(name = "TXT_CRM", nullable = false, length = 20, unique = true)
     private String crm;
 
@@ -19,6 +22,7 @@ public class Medico extends Pessoa {
                cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consulta> consultas = new ArrayList<>();
     
+    @NotNull(message = "A especialidade é obrigatória")
     @Column(name = "TXT_ESPECIALIDADE")
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade; 

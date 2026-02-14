@@ -17,14 +17,17 @@ public class ConsultaTest extends GenericTest {
     @Test
     public void testPersist() {
         Paciente paciente = em.find(Paciente.class, 1L);
-        Medico medico = em.find(Medico.class, 1L);
+        Medico medico = em.find(Medico.class, 4L); 
         Exame exame1 = em.find(Exame.class, 1L);
         Exame exame2 = em.find(Exame.class, 2L);
 
         Consulta consulta = new Consulta();
-        LocalDateTime dataConsulta = LocalDateTime.parse("2024-10-11T15:30:00");
+        
+
+        LocalDateTime dataConsulta = LocalDateTime.parse("2030-10-11T15:30:00");
+        
         consulta.setData(dataConsulta);
-        consulta.setMedico(medico);
+        consulta.setMedico(medico);  
         consulta.setPaciente(paciente);
         consulta.setExames(List.of(exame1, exame2));
 
@@ -36,19 +39,27 @@ public class ConsultaTest extends GenericTest {
 
     @Test
     public void testAtualizarConsulta() {
-
         TypedQuery<Consulta> query = em.createQuery(
                 "SELECT c FROM Consulta c WHERE c.data = :data",
                 Consulta.class
         );
-        LocalDateTime dataOriginal = LocalDateTime.parse("2024-10-12T09:15:00");
+        
+        LocalDateTime dataOriginal = LocalDateTime.parse("2026-07-15T09:15:00");
         query.setParameter("data", dataOriginal);
 
         Consulta consulta = query.getSingleResult();
         Assertions.assertNotNull(consulta);
 
-        LocalDateTime dataAtualizada = LocalDateTime.parse("2024-10-15T20:35:00");
+        LocalDateTime dataAtualizada = LocalDateTime.parse("2030-10-15T09:00:00");
         consulta.setData(dataAtualizada);
+
+              if (consulta.getMedico() == null) {
+            consulta.setMedico(em.find(Medico.class, 4L)); 
+        }
+        if (consulta.getPaciente() == null) {
+            consulta.setPaciente(em.find(Paciente.class, 1L));
+        }
+
         em.flush();
 
         query.setParameter("data", dataOriginal);
@@ -59,7 +70,6 @@ public class ConsultaTest extends GenericTest {
         Assertions.assertNotNull(atualizado);
     }
 
-
     @Test
     @SuppressWarnings("UnusedAssignment")
     public void testAtualizarConsultaMerge()  {
@@ -67,14 +77,23 @@ public class ConsultaTest extends GenericTest {
                 "SELECT c FROM Consulta c WHERE c.data = :data",
                 Consulta.class
         );
-        LocalDateTime dataOriginal = LocalDateTime.parse("2025-12-18T17:30:00");
+        
+        LocalDateTime dataOriginal = LocalDateTime.parse("2026-12-18T17:30:00");
         query.setParameter("data", dataOriginal);
+        
         Consulta consulta = query.getSingleResult();
         Assertions.assertNotNull(consulta);
-
         
-        LocalDateTime dataAtualizada = LocalDateTime.parse("2024-11-25T10:00:00");
+        LocalDateTime dataAtualizada = LocalDateTime.parse("2030-11-25T10:00:00");
         consulta.setData(dataAtualizada);
+        
+         if (consulta.getMedico() == null) {
+            consulta.setMedico(em.find(Medico.class, 4L));
+        }
+        if (consulta.getPaciente() == null) {
+            consulta.setPaciente(em.find(Paciente.class, 1L));
+        }
+
         em.clear();
         
         consulta = (Consulta) em.merge(consulta);
@@ -94,7 +113,7 @@ public class ConsultaTest extends GenericTest {
                 "SELECT c FROM Consulta c WHERE c.data = :data",
                 Consulta.class);
         
-        LocalDateTime data = LocalDateTime.parse("2025-05-14T18:30:00");
+        LocalDateTime data = LocalDateTime.parse("2027-05-14T18:30:00");
         
         query.setParameter("data", data);
         Consulta consulta = query.getSingleResult();
@@ -110,7 +129,7 @@ public class ConsultaTest extends GenericTest {
     @Test
     public void testFindById() {
         Consulta consulta = em.find(Consulta.class, 1L);
-        LocalDateTime expectedDate = LocalDateTime.parse("2024-10-10T14:30:00");
+        LocalDateTime expectedDate = LocalDateTime.parse("2026-06-01T14:30:00");
         assertEquals(expectedDate, consulta.getData());
     }
 }

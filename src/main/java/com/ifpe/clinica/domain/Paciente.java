@@ -1,14 +1,19 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name = "TB_PACIENTE")
 @DiscriminatorValue("PACIENTE")
 @PrimaryKeyJoinColumn(name = "ID_PESSOA", referencedColumnName = "ID_PESSOA")
 public class Paciente extends Pessoa{
+    
+    @NotBlank(message = "O CPF é obrigatório")
+    @CPF(message = "CPF inválido")
     @Column(name = "TXT_CPF", nullable = false, length = 11, unique = true)
     private String cpf;
 
