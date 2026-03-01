@@ -1,7 +1,9 @@
 package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.validator.constraints.br.CPF;
@@ -12,13 +14,15 @@ import org.hibernate.validator.constraints.br.CPF;
 @PrimaryKeyJoinColumn(name = "ID_PESSOA", referencedColumnName = "ID_PESSOA")
 public class Paciente extends Pessoa{
     
-    @NotBlank(message = "O CPF é obrigatório")
-    @CPF(message = "CPF inválido")
+    @NotBlank(message = "{paciente.cpf.notblank}")
+    @CPF(message = "{paciente.cpf.invalido}")
     @Column(name = "TXT_CPF", nullable = false, length = 11, unique = true)
     private String cpf;
 
+    @Valid
+    @NotNull(message = "{paciente.endereco.notnull}") // <-- ADICIONE ESTA LINHA AQUI!
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn(name = "ENDERECO_ID")
+    @JoinColumn(name = "ENDERECO_ID", nullable = false)
     private Endereco endereco;
 
     @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

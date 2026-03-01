@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: domain.EnderecoTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.673 s -- in domain.EnderecoTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.948 s -- in domain.EnderecoTest

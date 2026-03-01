@@ -1,20 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: validation.PagamentoValidationTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.602 s <<< FAILURE! -- in validation.PagamentoValidationTest
-validation.PagamentoValidationTest.testPagamentoSemForma -- Time elapsed: 0.015 s <<< ERROR!
-jakarta.persistence.RollbackException: Transaction "rolled back" because transaction was set to RollbackOnly.
-	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:146)
-	at domain.GenericTest.tearDown(GenericTest.java:42)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-validation.PagamentoValidationTest.testPagamentoValorNegativo -- Time elapsed: 0.002 s <<< ERROR!
-jakarta.persistence.RollbackException: Transaction "rolled back" because transaction was set to RollbackOnly.
-	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:146)
-	at domain.GenericTest.tearDown(GenericTest.java:42)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.954 s -- in validation.PagamentoValidationTest

@@ -24,9 +24,9 @@ public abstract class Pessoa{
     @Column(name = "ID_PESSOA")
     protected Long id;
 
-    @NotBlank(message = "O nome não pode estar vazio")
-    @Size(max = 255, message = "O nome deve ter no máximo 255 caracteres")
-    @Column(name = "TXT_NOME")
+    @NotBlank(message = "{pessoa.nome.notblank}")
+    @Size(max = 255, message = "{pessoa.nome.size}")
+    @Column(name = "TXT_NOME", nullable = false, length = 255)
     protected String nome;
 
     public Pessoa() {

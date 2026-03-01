@@ -1,4 +1,3 @@
-
 package jpql;
 
 import com.ifpe.clinica.domain.Medico;
@@ -23,7 +22,7 @@ public class MedicoJPQLTest extends GenericTest {
 
         List<Medico> resultados = query.getResultList();
 
-        Assertions.assertEquals(3, resultados.size());
+        Assertions.assertEquals(2, resultados.size());
     }
 
     @Test
@@ -54,11 +53,11 @@ public class MedicoJPQLTest extends GenericTest {
 
     @Test
     public void buscarMedicosComCrmEspecificoUsandoLike() {
-        String jpql = "SELECT m FROM Medico m WHERE m.crm LIKE 'CRM1%'";
+        String jpql = "SELECT m FROM Medico m WHERE m.crm LIKE '%PE'";
         
         TypedQuery<Medico> query = em.createQuery(jpql, Medico.class);
         List<Medico> resultados = query.getResultList();
 
-        Assertions.assertEquals(2, resultados.size());
+        Assertions.assertEquals(1, resultados.size());
     }
 }

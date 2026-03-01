@@ -1,9 +1,13 @@
 package com.ifpe.clinica.domain;
 
 import com.ifpe.clinica.enums.CategoriaFoto;
+import com.ifpe.clinica.enums.TipoImagem;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,32 +19,42 @@ public class FotoPaciente {
     @Column(name = "ID_FOTO")
     private Long id;
 
-    @NotBlank(message = "O título da foto é obrigatório")
-    @Column(name = "TXT_TITULO", length = 100)
+    @NotBlank(message = "{fotoPaciente.titulo.notblank}")
+    @Size(max = 100, message = "{fotoPaciente.titulo.size}")
+    @Column(name = "TXT_TITULO", length = 100, nullable = false)
     private String titulo;
 
+    @Size(max = 500, message = "{fotoPaciente.descricao.size}")
     @Column(name = "TXT_DESCRICAO", length = 500)
     private String descricao;
 
+    @NotNull(message = "{fotoPaciente.imagem.notnull}")
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Column(name = "BIN_IMAGEM")
+    @Column(name = "BIN_IMAGEM", nullable = false)
     private byte[] imagem;
 
-    @Column(name = "TXT_TIPO_IMAGEM", length = 50)
-    private String tipoImagem; // "JPG", "PNG", "JPEG"
+    @NotNull(message = "{fotoPaciente.tipoImagem.notnull}")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "TXT_TIPO_IMAGEM", length = 50, nullable = false)
+    private TipoImagem tipoImagem;
 
-    @Column(name = "TXT_TAMANHO")
-    private Long tamanho; // em bytes
+    @NotNull(message = "{fotoPaciente.tamanho.notnull}")
+    @Min(value = 1, message = "{fotoPaciente.tamanho.min}")
+    @Column(name = "TXT_TAMANHO", nullable = false)
+    private Long tamanho;
 
-    @Column(name = "DT_UPLOAD")
+    @NotNull(message = "{fotoPaciente.dataUpload.notnull}")
+    @PastOrPresent(message = "{fotoPaciente.dataUpload.past}")
+    @Column(name = "DT_UPLOAD", nullable = false)
     private LocalDateTime dataUpload = LocalDateTime.now();
 
+    @NotNull(message = "{fotoPaciente.categoria.notnull}")
     @Enumerated(EnumType.STRING)
-    @Column(name = "TXT_CATEGORIA", length = 30)
+    @Column(name = "TXT_CATEGORIA", length = 30, nullable = false)
     private CategoriaFoto categoria;
 
-    @NotNull
+    @NotNull(message = "{fotoPaciente.paciente.notnull}")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PACIENTE_ID", nullable = false)
     private Paciente paciente;
@@ -49,7 +63,7 @@ public class FotoPaciente {
     }
 
     public FotoPaciente(Long id, String titulo, String descricao, byte[] imagem,
-            String tipoImagem, Long tamanho, CategoriaFoto categoria, Paciente paciente) {
+            TipoImagem tipoImagem, Long tamanho, CategoriaFoto categoria, Paciente paciente) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -60,7 +74,6 @@ public class FotoPaciente {
         this.paciente = paciente;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -93,11 +106,11 @@ public class FotoPaciente {
         this.imagem = imagem;
     }
 
-    public String getTipoImagem() {
+    public TipoImagem getTipoImagem() {
         return tipoImagem;
     }
 
-    public void setTipoImagem(String tipoImagem) {
+    public void setTipoImagem(TipoImagem tipoImagem) {
         this.tipoImagem = tipoImagem;
     }
 

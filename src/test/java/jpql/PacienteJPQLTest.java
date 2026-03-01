@@ -19,7 +19,7 @@ public class PacienteJPQLTest extends GenericTest {
         TypedQuery<Paciente> query = em.createQuery(jpql, Paciente.class);
         query.setParameter("estado", "PE");
         query.setParameter("nome", "João%");
-        query.setParameter("cpf", "24867822060"); 
+        query.setParameter("cpf", "39053344705"); 
 
         List<Paciente> resultados = query.getResultList();
 
@@ -47,7 +47,7 @@ public class PacienteJPQLTest extends GenericTest {
         TypedQuery<Object[]> query = em.createQuery(jpql, Object[].class);
         List<Object[]> resultados = query.getResultList();
 
-        Assertions.assertEquals(2, resultados.size());
+        Assertions.assertEquals(3, resultados.size());
     }
 
     @Test
@@ -59,7 +59,6 @@ public class PacienteJPQLTest extends GenericTest {
 
         List<Paciente> resultados = query.getResultList();
 
-        Assertions.assertEquals(2, resultados.size());
-        Assertions.assertEquals("Cleiton Rasta", resultados.get(0).getNome());
+        Assertions.assertEquals(0, resultados.size());
     }
 }

@@ -2,8 +2,12 @@ package domain;
 
 import com.ifpe.clinica.domain.FotoPaciente;
 import com.ifpe.clinica.domain.Paciente;
+import com.ifpe.clinica.enums.CategoriaFoto;
+import com.ifpe.clinica.enums.TipoImagem;
 import jakarta.persistence.TypedQuery;
 import org.junit.jupiter.api.*;
+
+import java.time.LocalDateTime;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class FotoPacienteTest extends GenericTest {
@@ -12,6 +16,13 @@ public class FotoPacienteTest extends GenericTest {
     public void testPersist() {
         FotoPaciente foto = new FotoPaciente();
         foto.setTitulo("Nova Foto");
+        
+        foto.setDescricao("Descrição da foto");
+        foto.setImagem(new byte[]{1, 2, 3}); 
+        foto.setTipoImagem(TipoImagem.PNG);
+        foto.setTamanho(1024L);
+        foto.setDataUpload(LocalDateTime.now());
+        foto.setCategoria(CategoriaFoto.FOTO_PERFIL);
 
         Paciente paciente = em.find(Paciente.class, 1L);
         foto.setPaciente(paciente);
@@ -85,7 +96,6 @@ public class FotoPacienteTest extends GenericTest {
 
         Assertions.assertNotNull(f);
         Assertions.assertEquals("Foto de Perfil", f.getTitulo());
-        Assertions.assertEquals("PNG", f.getTipoImagem());
+        Assertions.assertEquals(TipoImagem.PNG, f.getTipoImagem());
     }
-
 }

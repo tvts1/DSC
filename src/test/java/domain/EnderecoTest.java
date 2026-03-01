@@ -75,14 +75,14 @@ public class EnderecoTest extends GenericTest {
                 "SELECT e FROM Endereco e WHERE e.rua = :rua",
                 Endereco.class);
         
-        query.setParameter("rua", "Rua D");
+        query.setParameter("rua", "Rua E");
         Endereco endereco = query.getSingleResult();
         Assertions.assertNotNull(endereco);
         
         em.remove(endereco);
         em.flush();
         
-        query.setParameter("rua", "Rua D");
+        query.setParameter("rua", "Rua E");
         Assertions.assertEquals(0, query.getResultList().size());
     }
 

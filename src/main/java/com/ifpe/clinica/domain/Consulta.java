@@ -4,6 +4,7 @@ import com.ifpe.clinica.validation.DiaUtil;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,22 +19,24 @@ public class Consulta {
     @Column(name = "ID_CONSULTA")
     private Long id;
     
-    @NotNull(message = "A data da consulta é obrigatória")
-    @Future(message = "A consulta deve ser agendada para o futuro")
-    @DiaUtil(message = "Consultas apenas em dias úteis")
+    @NotNull(message = "{consulta.data.notnull}")
+    @Future(message = "{consulta.data.future}")
+    @DiaUtil(message = "{consulta.data.diautil}")
     @Column(name = "DT_CONSULTA", nullable = false)
     private LocalDateTime data;
 
-    @NotNull(message = "O médico é obrigatório")
+    @NotNull(message = "{consulta.medico.notnull}")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MEDICO_ID")
+    @JoinColumn(name = "MEDICO_ID", nullable = false)
     private Medico medico;
 
-    @NotNull(message = "O paciente é obrigatório")
+    @NotNull(message = "{consulta.paciente.notnull}")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PACIENTE_ID")
+    @JoinColumn(name = "PACIENTE_ID", nullable = false)
     private Paciente paciente;
 
+    @NotNull(message = "{consulta.exames.notnull}")
+    @Size(max = 15, message = "{consulta.exames.size}")
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "TB_CONSULTA_EXAME",

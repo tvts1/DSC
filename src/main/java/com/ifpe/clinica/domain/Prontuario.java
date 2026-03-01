@@ -1,7 +1,9 @@
 package com.ifpe.clinica.domain;
 
-
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,11 +17,14 @@ public class Prontuario {
     @Column(name = "ID_PRONTUARIO")
     private Long id;
 
+    @NotBlank(message = "{prontuario.descricao.notblank}")
+    @Size(max = 500, message = "{prontuario.descricao.size}")
     @Column(name = "TXT_DESCRICAO", length = 500, nullable = false)
     private String descricao;
 
+    @NotNull(message = "{prontuario.paciente.notnull}")
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PACIENTE_ID")
+    @JoinColumn(name = "PACIENTE_ID", nullable = false)
     private Paciente paciente;
 
     @OneToMany(mappedBy = "prontuario", fetch = FetchType.LAZY,

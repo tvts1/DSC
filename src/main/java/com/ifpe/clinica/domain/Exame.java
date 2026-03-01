@@ -2,6 +2,8 @@ package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,20 +17,24 @@ public class Exame {
     @Column(name = "ID_EXAME")
     private Long id;
 
-    @NotBlank(message = "O nome do exame é obrigatório")
+    @NotBlank(message = "{exame.nome.notblank}")
+    @Size(max = 255, message = "{exame.nome.size}")
     @Column(name = "TXT_NOME", length = 255, nullable = false)
     private String nome;
 
     @ManyToMany(mappedBy = "exames", fetch = FetchType.LAZY)
     private List<Consulta> consultas = new ArrayList<>();
 
+    @NotNull(message = "{exame.urlsAnexos.notnull}")
+    @Size(max = 10, message = "{exame.urlsAnexos.size}")
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(
         name = "TB_EXAME_ANEXOS",
         joinColumns = @JoinColumn(name = "EXAME_ID", referencedColumnName = "ID_EXAME") 
     )
     @Column(name = "TXT_URL_ANEXO", length = 512, nullable = false)
-    private List<String> urlsAnexos = new ArrayList<>();
+    private List<@NotBlank(message = "{exame.urlsAnexos.element.notblank}") 
+                 @Size(max = 512, message = "{exame.urlsAnexos.element.size}") String> urlsAnexos = new ArrayList<>();
     
     
     public Long getId() {

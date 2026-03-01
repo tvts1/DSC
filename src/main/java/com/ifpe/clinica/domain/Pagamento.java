@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -19,6 +21,7 @@ public class Pagamento {
     @Column(name = "ID_PAGAMENTO")
     private Long id;
 
+    @NotNull(message = "{pagamento.consulta.notnull}")
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "CONSULTA_ID", nullable = false, unique = true)
     private Consulta consulta;
@@ -27,46 +30,52 @@ public class Pagamento {
     @JoinColumn(name = "CONVENIO_ID")
     private Convenio convenio;
 
-    @NotNull(message = "A forma de pagamento é obrigatória")
+    @NotNull(message = "{pagamento.formaPagamento.notnull}")
     @Enumerated(EnumType.STRING)
     @Column(name = "FORMA_PAGAMENTO", nullable = false)
     private FormaPagamento formaPagamento;
 
+    @NotNull(message = "{pagamento.status.notnull}")
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS_PAGAMENTO", nullable = false)
     private StatusPagamento status;
 
-    @NotNull(message = "O valor total é obrigatório")
-    @Positive(message = "O valor total deve ser positivo")
+    @NotNull(message = "{pagamento.valorTotal.notnull}")
+    @Positive(message = "{pagamento.valorTotal.positive}")
     @Column(name = "VALOR_TOTAL", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal;
 
+    @PositiveOrZero(message = "{pagamento.valorPago.positiveOrZero}")
     @Column(name = "VALOR_PAGO", precision = 10, scale = 2)
     private BigDecimal valorPago;
 
+    @PositiveOrZero(message = "{pagamento.desconto.positiveOrZero}")
     @Column(name = "VALOR_DESCONTO", precision = 10, scale = 2)
     private BigDecimal desconto;
 
+    @PositiveOrZero(message = "{pagamento.acrescimo.positiveOrZero}")
     @Column(name = "VALOR_ACRESCIMO", precision = 10, scale = 2)
     private BigDecimal acrescimo;
 
-    @PastOrPresent
+    @NotNull(message = "{pagamento.dataGeracao.notnull}")
+    @PastOrPresent(message = "{pagamento.dataGeracao.past}")
     @Column(name = "DT_GERACAO", nullable = false)
     private LocalDateTime dataGeracao = LocalDateTime.now();
 
+    @PastOrPresent(message = "{pagamento.dataPagamento.past}")
     @Column(name = "DT_PAGAMENTO")
     private LocalDateTime dataPagamento;
 
+    @Size(max = 100, message = "{pagamento.codigoTransacao.size}")
     @Column(name = "TXT_CODIGO_TRANSACAO", length = 100)
     private String codigoTransacao;
 
+    @Size(max = 500, message = "{pagamento.observacoes.size}")
     @Column(name = "TXT_OBSERVACOES", length = 500)
     private String observacoes;
 
     public Pagamento() {
     }
-
-    // Getters e Setters
 
     public Long getId() {
         return id;
@@ -179,9 +188,15 @@ public class Pagamento {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
         Pagamento other = (Pagamento) obj;
         return Objects.equals(this.id, other.id);
     }

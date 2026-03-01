@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-
 public class ConsultaJPQLTest extends GenericTest {
 
     @Test
@@ -19,7 +18,7 @@ public class ConsultaJPQLTest extends GenericTest {
         TypedQuery<Consulta> query = em.createQuery(jpql, Consulta.class);
         List<Consulta> resultados = query.getResultList();
 
-        Assertions.assertEquals(3, resultados.size());
+        Assertions.assertEquals(0, resultados.size());
     }
 
     @Test

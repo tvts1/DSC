@@ -2,6 +2,7 @@ package jpql;
 
 import com.ifpe.clinica.domain.FotoPaciente;
 import com.ifpe.clinica.enums.CategoriaFoto;
+import com.ifpe.clinica.enums.TipoImagem;
 import domain.GenericTest;
 import jakarta.persistence.TypedQuery;
 import java.util.List;
@@ -18,7 +19,7 @@ public class FotoPacienteJPQLTest extends GenericTest {
         
         TypedQuery<FotoPaciente> query = em.createQuery(jpql, FotoPaciente.class);
         query.setParameter("categoria", CategoriaFoto.FOTO_PERFIL);
-        query.setParameter("tipo", "JPG");
+        query.setParameter("tipo", TipoImagem.JPG);
 
         List<FotoPaciente> resultados = query.getResultList();
 

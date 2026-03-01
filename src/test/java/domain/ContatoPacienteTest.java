@@ -16,10 +16,12 @@ public class ContatoPacienteTest extends GenericTest {
         ContatoPaciente contatoPaciente = new ContatoPaciente();
 
         Contato contato = new Contato();
-        contato.setTelefone("11111111");
-        contato.setEmail("teste@email.com");
+        contato.setTelefone("8133334444");
+        contato.setCelular("81999998888"); 
+        contato.setEmail("teste_novo@email.com");
 
         contatoPaciente.setContato(contato);
+        contatoPaciente.setObservacoes("Paciente de teste");
 
         Paciente paciente = em.find(Paciente.class, 1L);
         contatoPaciente.setPaciente(paciente);
@@ -39,10 +41,10 @@ public class ContatoPacienteTest extends GenericTest {
         query.setParameter("email", "joao.silva@email.com");
         ContatoPaciente contatoPaciente = query.getSingleResult();
 
-        contatoPaciente.getContato().setEmail("novo@email.com");
+        contatoPaciente.getContato().setEmail("novo_email@email.com");
         em.flush();
 
-        query.setParameter("email", "novo@email.com");
+        query.setParameter("email", "novo_email@email.com");
         Assertions.assertNotNull(query.getSingleResult());
     }
 
@@ -55,7 +57,7 @@ public class ContatoPacienteTest extends GenericTest {
         query.setParameter("id", 1L);
         ContatoPaciente contatoPaciente = query.getSingleResult();
 
-        contatoPaciente.getContato().setTelefone("99999999");
+        contatoPaciente.getContato().setTelefone("8133339999");
         em.clear();
 
         contatoPaciente = em.merge(contatoPaciente);
@@ -63,7 +65,7 @@ public class ContatoPacienteTest extends GenericTest {
 
         query.setParameter("id", 1L);
         Assertions.assertEquals(
-                "99999999",
+                "8133339999",
                 query.getSingleResult().getContato().getTelefone()
         );
     }

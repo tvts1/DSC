@@ -10,25 +10,33 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
 @Table(name = "TB_CONTATO_PACIENTE")
 public class ContatoPaciente {
 
-    @Id
+@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CONTATO")
     private Long id;
 
+    @Valid
+    @NotNull(message = "{contatoPaciente.contato.notnull}")
     @Embedded
     private Contato contato;
 
+    @Size(max = 500, message = "{contatoPaciente.observacoes.size}")
     @Column(name = "TXT_OBSERVACOES", length = 500)
     private String observacoes;
 
+
+    @NotNull(message = "{contatoPaciente.paciente.notnull}")
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PACIENTE_ID")
+    @JoinColumn(name = "PACIENTE_ID", nullable = false)
     private Paciente paciente;
 
     public ContatoPaciente() {

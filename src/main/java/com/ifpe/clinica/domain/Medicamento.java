@@ -2,6 +2,8 @@ package com.ifpe.clinica.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -13,16 +15,19 @@ public class Medicamento {
     @Column(name = "ID_MEDICAMENTO")
     private Long id;
 
-    @NotBlank(message = "O nome do medicamento é obrigatório")
+    @NotBlank(message = "{medicamento.nome.notblank}")
+    @Size(max = 255, message = "{medicamento.nome.size}")
     @Column(name = "TXT_NOME", length = 255, nullable = false)
     private String nome;
 
-    @NotBlank(message = "A dose é obrigatória")
+    @NotBlank(message = "{medicamento.dose.notblank}")
+    @Size(max = 50, message = "{medicamento.dose.size}")
     @Column(name = "TXT_DOSE", length = 50, nullable = false)
     private String dose;
 
+    @NotNull(message = "{medicamento.prontuario.notnull}")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PRONTUARIO_ID")
+    @JoinColumn(name = "PRONTUARIO_ID", nullable = false)
     private Prontuario prontuario;
 
     public Long getId() {

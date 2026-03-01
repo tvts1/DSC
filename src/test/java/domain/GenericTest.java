@@ -11,13 +11,13 @@ import org.junit.jupiter.api.BeforeEach;
 import util.DbUnitUtil;
 
 public abstract class GenericTest {
-    
+
     protected EntityManagerFactory emf;
     protected EntityManager em;
     protected EntityTransaction et;
 
     @BeforeAll
-    public void setUpClass() throws Exception{
+    public void setUpClass() throws Exception {
         emf = Persistence.createEntityManagerFactory("clinicaPU");
         DbUnitUtil.insertData();
     }
@@ -38,19 +38,21 @@ public abstract class GenericTest {
 
     @AfterEach
     public void tearDown() {
-        if (et != null && et.isActive()) {
-            et.commit();
+        if (em.getTransaction().isActive()) {
+            if (em.getTransaction().getRollbackOnly()) {
+                em.getTransaction().rollback();
+            } else {
+                em.getTransaction().commit();
+            }
         }
-        if (em != null) {
-            em.close();
-        }
+        em.clear();
     }
-    
+
     protected void beginTransaction() {
         et = em.getTransaction();
         et.begin();
     }
-    
+
     protected void commitTransaction() {
         if (!et.getRollbackOnly()) {
             et.commit();

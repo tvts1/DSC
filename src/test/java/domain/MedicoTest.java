@@ -12,7 +12,7 @@ public class MedicoTest extends GenericTest{
     public void testPersist() {
         Medico m = new Medico();
         m.setNome("Dr. Roberto");
-        m.setCrm("CRM789");
+        m.setCrm("98765-MG");
         m.setEspecialidade(Especialidade.PEDIATRA);
 
         em.persist(m);
@@ -85,6 +85,6 @@ public class MedicoTest extends GenericTest{
     public void testFindById() {
         Medico m = em.find(Medico.class, 4L);
         Assertions.assertEquals("Dr. Carlos", m.getNome());
-        Assertions.assertEquals("CRM123", m.getCrm());
+        Assertions.assertEquals("1234-PE", m.getCrm());
     }
 }

@@ -20,7 +20,7 @@ public class ProntuarioJPQLTest extends GenericTest {
 
         List<Prontuario> resultados = query.getResultList();
 
-        Assertions.assertEquals(2, resultados.size());
+        Assertions.assertEquals(4, resultados.size());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class ProntuarioJPQLTest extends GenericTest {
         TypedQuery<Object[]> query = em.createQuery(jpql, Object[].class);
         List<Object[]> resultados = query.getResultList();
 
-        Assertions.assertEquals(3, resultados.size());
+        Assertions.assertEquals(4, resultados.size());
     }
 
     @Test

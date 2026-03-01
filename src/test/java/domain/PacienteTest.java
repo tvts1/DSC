@@ -72,8 +72,17 @@ public class PacienteTest extends GenericTest {
         Paciente paciente = query.getSingleResult();
         Assertions.assertNotNull(paciente);
 
+        em.createQuery("DELETE FROM FotoPaciente f WHERE f.paciente.id = :id")
+          .setParameter("id", paciente.getId())
+          .executeUpdate();
+          
+        em.createQuery("DELETE FROM ContatoPaciente c WHERE c.paciente.id = :id")
+          .setParameter("id", paciente.getId())
+          .executeUpdate();
+
         em.remove(paciente);
         em.flush();
+        em.clear(); 
 
         query.setParameter("nome", "Sandra Maria");
         Assertions.assertEquals(0, query.getResultList().size());
@@ -83,6 +92,6 @@ public class PacienteTest extends GenericTest {
     public void testFindById() {
         Paciente p = em.find(Paciente.class, 1L);
         Assertions.assertEquals("João Silva", p.getNome());
-        Assertions.assertEquals("54406263012", p.getCpf());
+        Assertions.assertEquals("11144477735", p.getCpf());
     }
 }
